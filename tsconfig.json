@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/icon/*": ["./src/components/Icons/*"],
+      "@/img/*": ["./src/assets/img/*"],
+      "@/layout/*": ["./src/components/layouts/*"],
+      "@/constant/*": ["./src/constants/*"],
+      "@/sendbird/*": ["./src/components/SendbirdChat/*"]
+    }
+  },
+  "include": ["src", "node_modules/@sendbird/uikit-react/index.d.ts"]
+}

@@ -1,0 +1,40 @@
+.table__border--bold .ant-table-tbody > tr > td {
+  border: 1px solid rgb(158, 154, 154);
+  border-top: 0px;
+  border-left: 0px;
+}
+.table__border--bold .ant-table-tbody > tr > td:nth-child(1) {
+  border-left: 1px solid rgb(158, 154, 154);
+}
+.table__border--bold .ant-table-tbody > tr:nth-child(1) > td {
+  border-top: 1px solid rgb(158, 154, 154);
+}
+
+.table__border--bold .ant-table-thead > tr > th {
+  border: 1px solid rgb(158, 154, 154);
+  border-left: 0px;
+  border-bottom: 0px;
+}
+.table__border--bold .ant-table-thead > tr > th:nth-child(1) {
+  border-left: 1px solid rgb(158, 154, 154);
+}
+
+.react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  bottom: 0;
+  right: -5px;
+  cursor: col-resize;
+  z-index: 1;
+}
+
+.dragHandler:hover {
+  cursor: move;
+  background-color: #ccc;
+}

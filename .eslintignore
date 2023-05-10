@@ -1,0 +1,6 @@
+.history
+public
+dist
+mock
+vite.config.ts
+**/*.json

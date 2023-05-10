@@ -1,0 +1,19 @@
+.left-image {
+  background-image: url('../../assets/img/images/logo-login.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.auth-card {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 40px;
+  border-radius: 5px;
+}
+
+.mobile-container {
+  background-image: url('/src/assets/img/images/logo-login.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
