@@ -1,5 +1,5 @@
 .left-image {
-  background-image: url('../../assets/img/images/logo-login.png');
+  background-image: linear-gradient(180deg, #FCB8C4 0%, #FB3357 100%);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,8 +12,21 @@
 }
 
 .mobile-container {
-  background-image: url('/src/assets/img/images/logo-login.png');
+  background-image: linear-gradient(180deg, #FCB8C4 0%, #FB3357 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.auth-text::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  background-color: white;
+  width: 20%;
+  height: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
 }

@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { Button, Layout, Badge, Popover, Tooltip, Divider, Avatar } from 'antd'
-import { MdNotifications } from 'react-icons/md'
-import NotiModal from './components/NotificationModal'
-import { RiMessengerFill } from 'react-icons/ri'
+import {
+  Button,
+  Layout,
+  Popover,
+  Tooltip,
+  Divider,
+  Avatar,
+  Typography,
+} from 'antd'
+import { BsFillCaretDownFill } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 import useSbChannelUnreadCount from '@/components/SendbirdChat/hooks/channelHooks/useSbChannelUnreadCount'
-import {
-  useGetCountAccountNotifyNotSeenQuery,
-  useUpdatePlayerIdWhenSignOutMutation,
-} from '@/services/notificationApi'
+import { useUpdatePlayerIdWhenSignOutMutation } from '@/services/notificationApi'
 import { SB_GROUP_CUSTOM_TYPE } from '@/components/SendbirdChat/constant/sendbird.constant'
 import { useGetDocumentQuery } from '@/services/documentApi'
 import { AdminMeType } from '@/services/accountApi/types'
@@ -24,9 +27,8 @@ interface Props {
 }
 
 const AHeader = ({ adminInfo, showDrawer }: Props) => {
-  const [open, setOpen] = useState(false)
   const [openAccPopover, setOpenAccPopover] = useState(false)
-  const { unreadChannelCount } = useSbChannelUnreadCount({
+  const {} = useSbChannelUnreadCount({
     customeTypes: [
       SB_GROUP_CUSTOM_TYPE.ADMIN_ADMIN,
       SB_GROUP_CUSTOM_TYPE.SUPPORT_DRIVER,
@@ -34,9 +36,6 @@ const AHeader = ({ adminInfo, showDrawer }: Props) => {
       SB_GROUP_CUSTOM_TYPE.ORDER_DRIVER,
       SB_GROUP_CUSTOM_TYPE.ORDER_GUEST,
     ],
-  })
-  const { data: countMessageNotSeen } = useGetCountAccountNotifyNotSeenQuery({
-    query: '',
   })
   const { data: documents } = useGetDocumentQuery(
     {
@@ -50,9 +49,6 @@ const AHeader = ({ adminInfo, showDrawer }: Props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [updatePlayerIdWhenSignOut] = useUpdatePlayerIdWhenSignOutMutation()
-  const handleOpenChange = (newOpen: boolean) => {
-    setOpen(newOpen)
-  }
   const handleOpenAccPopoverChange = (newOpen: boolean) => {
     setOpenAccPopover(newOpen)
   }
@@ -69,48 +65,36 @@ const AHeader = ({ adminInfo, showDrawer }: Props) => {
 
   return (
     <Header
-      className="site-layout-background sticky z-40 w-full top-0 left-0 bg-[#24292e]"
+      className="site-layout-background sticky z-40 w-full top-0 left-0 bg-[white]"
       style={{ padding: 0, backgroundColor: '#606168', color: '#FFF' }}
     >
-      <div className="h-full flex items-center justify-end px-5 p-0 shadow-sm">
+      <div className="h-full flex items-center justify-end px-32 p-0 shadow-sm">
+        <Typography className="text-[#FB3457] font-semibold text-2xl cursor-pointer">
+          tuhocjlpt
+        </Typography>
         <HiOutlineMenuAlt2
           className="text-3xl text-[#00ffff] inline-block xl:hidden"
           onClick={showDrawer}
         />
         <div className="flex items-center justify-end flex-1">
-          <Badge
-            count={unreadChannelCount || 0}
-            style={{ color: '#FFF', fontSize: '10px' }}
-            className="mr-4"
-            size="small"
-          >
-            <Button
-              type="text"
-              icon={<RiMessengerFill className="text-2xl text-white" />}
-              onClick={() => navigate('/chat')}
-            ></Button>
-          </Badge>
-          <Popover
-            placement="bottomRight"
-            content={
-              <NotiModal closePopover={() => setOpen(false)} isOpen={open} />
-            }
-            trigger="click"
-            open={open}
-            onOpenChange={handleOpenChange}
-          >
-            <Badge
-              count={countMessageNotSeen?.data?.count}
-              style={{ color: '#FFF', fontSize: '10px' }}
-              className="mr-4"
-              size="small"
-            >
-              <Button
-                type="text"
-                icon={<MdNotifications className="text-2xl text-white" />}
-              ></Button>
-            </Badge>
-          </Popover>
+          <div className="text-[#707070] font-normal text-sm flex gap-5 cursor-pointer">
+            <div className="flex items-center gap-3">
+              Luyện bài tập
+              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
+            </div>
+            <div className="flex items-center gap-3">
+              Luyện sách
+              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
+            </div>
+            <div className="flex items-center gap-3">
+              Luyện đề
+              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
+            </div>
+            <div className="flex items-center gap-3">
+              Thi thử
+              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
+            </div>
+          </div>
           <Popover
             content={
               <div>
@@ -152,17 +136,19 @@ const AHeader = ({ adminInfo, showDrawer }: Props) => {
             >
               <Avatar src={documents?.data?.[0]?.document?.url} size={40} />
               <div className="ml-2">
-                <div className="leading-4 font-bold">{adminInfo?.name}</div>
-                <div className="leading-4 text-grayButton text-xs">
-                  {adminInfo?.systemRoles?.[0]?.name}
+                <div className="leading-4 font-bold text-black font-normal text-xs">
+                  {adminInfo?.name}
                 </div>
+                {/* <div className="leading-4 text-grayButton text-xs">
+                  {adminInfo?.systemRoles?.[0]?.name}
+                </div> */}
               </div>
             </div>
             <Divider type="vertical" className="border-l-grayButton" />
             <Tooltip placement="bottomLeft" title="Đăng xuất">
               <Button
                 type="text"
-                icon={<HiOutlineLogout className="text-xl text-white" />}
+                icon={<HiOutlineLogout className="text-xl text-[#868686]" />}
                 className="flex items-center justify-center"
                 onClick={handleLogout}
               />

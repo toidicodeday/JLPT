@@ -36,7 +36,7 @@ const Login = () => {
         Cookies.set(KEYS.REFRESH_TOKEN, loginRes?.data?.refreshToken || '')
 
         toast.success(MESSAGES.SUCESS_LOGIN)
-        navigate('/')
+        navigate('/study')
       }
       if ('error' in loginRes) {
         toast.error(
@@ -56,10 +56,7 @@ const Login = () => {
     <AuthLayout>
       <div className="flex justify-center">
         <div>
-          <h1 className="text-2xl text-center font-bold text-[#018ab9] hidden xl:block">
-            HỆ THỐNG QUẢN LÝ LIÊN MINH VẬN TẢI
-          </h1>
-          <div className="auth-card sm:w-[28rem] md:w-[32rem] xl:w-[38rem] bg-white p-12 xl:mt-16 rounded-2xl mx-auto">
+          <div className="sm:w-[28rem] md:w-[32rem] bg-white p-12 xl:mt-16 mx-auto">
             <p className="text-2xl font-bold text-center">Đăng nhập</p>
             <Form
               name="roleForm"
