@@ -36,7 +36,7 @@ const Login = () => {
         Cookies.set(KEYS.REFRESH_TOKEN, loginRes?.data?.refreshToken || '')
 
         toast.success(MESSAGES.SUCESS_LOGIN)
-        navigate('/study')
+        navigate('/home')
       }
       if ('error' in loginRes) {
         toast.error(

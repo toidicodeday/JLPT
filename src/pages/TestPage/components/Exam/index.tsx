@@ -5,9 +5,6 @@ import { useNavigate } from 'react-router-dom'
 
 const Exam = () => {
   const navigate = useNavigate()
-  const handleReturn = () => {
-    navigate('/test')
-  }
   return (
     <div className="w-full">
       <div className="bg-[#FFCAD4] py-5 text-center">
@@ -47,27 +44,32 @@ const Exam = () => {
         <div className="py-5 flex items-center justify-end gap-5">
           <Button
             type="text"
-            className="border border-solid border-[#FB3357] text-[#FB3357] font-bold"
-            onClick={handleReturn}
+            className="border border-solid border-[#FB3357] text-[#FB3357] font-bold hover:bg-[#FB3357] hover:text-white"
           >
             Quay lại
           </Button>
-          <Button type="primary" className="bg-[#FB3357] font-bold">
+          <Button
+            type="primary"
+            className="bg-[#FB3357] font-bold hover:opacity-80"
+          >
             Lưu và tiếp tục
           </Button>
-          <Button type="primary" className="bg-[#D9D9D9] text-[#707070]">
+          <Button
+            type="primary"
+            className="bg-[#D9D9D9] text-[#707070] hover:opacity-80"
+          >
             Nộp bài
           </Button>
         </div>
         <div className="pt-6 px-5 pb-4 bg-[#F5F5F5] rounded-[10px]">
           <div className="flex justify-center gap-5 mb-4">
-            <div className="w-7 h-7 rounded-[50%] border border-solid border-[#16DB93] text-[#16DB93] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-[50%] border border-solid border-[#16DB93] text-white flex items-center justify-center bg-[#16DB93]">
               1
             </div>
-            <div className="w-7 h-7 rounded-[50%] border border-solid border-[#16DB93] text-[#16DB93] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-[50%] border border-solid border-[#16DB93] text-white flex items-center justify-center bg-[#16DB93]">
               2
             </div>
-            <div className="w-7 h-7 rounded-[50%] border border-solid border-[#16DB93] text-[#16DB93] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-[50%] border border-solid border-[#16DB93] text-white flex items-center justify-center bg-[#16DB93]">
               3
             </div>
             <div className="w-7 h-7 rounded-[50%] border border-solid border-[#16DB93] text-[#16DB93] flex items-center justify-center">

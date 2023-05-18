@@ -37,18 +37,21 @@ const LessonDetail = () => {
           </div>
         </div>
         <div className="flex gap-5 justify-end py-6">
-          <Button danger className="rounded-[10px] px-5">
+          <Button
+            danger
+            className="rounded-[10px] px-5 hover:bg-[#FB3357] hover:text-white"
+          >
             Quay lại
           </Button>
           <Button
             type="primary"
-            className="bg-[#FB3357] border-0 rounded-[10px] font-bold px-5"
+            className="bg-[#FB3357] border-0 rounded-[10px] font-bold px-5 hover:opacity-80"
           >
             Lưu và tiếp tục
           </Button>
           <Button
             type="primary"
-            className="bg-[#D9D9D9] border-0 rounded-[10px] font-bold text-[#707070] px-5"
+            className="bg-[#D9D9D9] border-0 rounded-[10px] font-bold text-[#707070] px-5 hover:opacity-80"
             onClick={handleMoveScore}
           >
             Nộp bài

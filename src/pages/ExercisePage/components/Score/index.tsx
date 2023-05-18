@@ -38,13 +38,13 @@ const Score = () => {
             <div className="w-7 h-7 bg-[#16DB93] rounded-[50%] flex items-center justify-center text-white">
               5
             </div>
-            <div className="w-7 h-7 bg-[#16DB93] rounded-[50%] flex items-center justify-center text-white">
+            <div className="w-7 h-7 bg-[#FFB800] rounded-[50%] flex items-center justify-center text-white">
               6
             </div>
             <div className="w-7 h-7 bg-[#16DB93] rounded-[50%] flex items-center justify-center text-white">
               7
             </div>
-            <div className="w-7 h-7 bg-[#16DB93] rounded-[50%] flex items-center justify-center text-white">
+            <div className="w-7 h-7 bg-[#FFB800] rounded-[50%] flex items-center justify-center text-white">
               8
             </div>
             <div className="w-7 h-7 bg-[#16DB93] rounded-[50%] flex items-center justify-center text-white">

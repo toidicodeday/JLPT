@@ -69,7 +69,10 @@ const AHeader = ({ adminInfo, showDrawer }: Props) => {
       style={{ padding: 0, backgroundColor: '#606168', color: '#FFF' }}
     >
       <div className="h-full flex items-center justify-end px-32 p-0 shadow-sm">
-        <Typography className="text-[#FB3457] font-semibold text-2xl cursor-pointer">
+        <Typography
+          className="text-[#FB3457] font-semibold text-2xl cursor-pointer hover:opacity-80"
+          onClick={() => navigate('/home')}
+        >
           tuhocjlpt
         </Typography>
         <HiOutlineMenuAlt2
@@ -78,19 +81,31 @@ const AHeader = ({ adminInfo, showDrawer }: Props) => {
         />
         <div className="flex items-center justify-end flex-1">
           <div className="text-[#707070] font-normal text-sm flex gap-5 cursor-pointer">
-            <div className="flex items-center gap-3">
+            <div
+              className="flex items-center gap-3 hover:text-[#FB3457]"
+              onClick={() => navigate('/exercise')}
+            >
               Luyện bài tập
               <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
             </div>
-            <div className="flex items-center gap-3">
+            <div
+              className="flex items-center gap-3 hover:text-[#FB3457]"
+              onClick={() => navigate('/study')}
+            >
               Luyện sách
               <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
             </div>
-            <div className="flex items-center gap-3">
+            <div
+              className="flex items-center gap-3 hover:text-[#FB3457]"
+              onClick={() => navigate('/test')}
+            >
               Luyện đề
               <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
             </div>
-            <div className="flex items-center gap-3">
+            <div
+              className="flex items-center gap-3 hover:text-[#FB3457]"
+              onClick={() => navigate('/home/test-exam')}
+            >
               Thi thử
               <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
             </div>
