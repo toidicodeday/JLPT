@@ -87,7 +87,7 @@ const StudyPage = () => {
         </div>
         <Button
           type="text"
-          className="text-[#FB3357] bg-white absolute bottom-[10%] left-[50%] translate-x-[-50%]"
+          className="text-[#FB3357] bg-white absolute bottom-[10%] left-[50%] translate-x-[-50%] hover:opacity-80"
         >
           Xem thêm
         </Button>

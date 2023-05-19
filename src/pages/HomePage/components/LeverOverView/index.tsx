@@ -40,11 +40,21 @@ const LeverOverView = () => {
                     Theo bài tập tuhocjlpt.com
                   </p>
                   <div className="text-[#0075FF]">
-                    <p className="mb-2 cursor-pointer">Cách đọc Kanji N3</p>
-                    <p className="mb-2 cursor-pointer">Cách đọc Kanji N3</p>
-                    <p className="mb-2 cursor-pointer">Cách đọc Kanji N3</p>
-                    <p className="mb-2 cursor-pointer">Cách đọc Kanji N3</p>
-                    <p className="mb-2 cursor-pointer">Cách đọc Kanji N3</p>
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                      Cách đọc Kanji N3
+                    </p>
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                      Cách đọc Kanji N3
+                    </p>
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                      Cách đọc Kanji N3
+                    </p>
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                      Cách đọc Kanji N3
+                    </p>
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                      Cách đọc Kanji N3
+                    </p>
                   </div>
                 </div>
                 <Button
@@ -67,19 +77,21 @@ const LeverOverView = () => {
                     Theo sách luyện JLPT
                   </p>
                   <div className="text-[#0075FF]">
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Luyện N4 theo sách Kodokawa
                     </p>
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Luyện N4 theo sách Super moshi
                     </p>
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Luyện theo sách Kokaku Dekiru
                     </p>
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Luyện theo sách Nihongo
                     </p>
-                    <p className="mb-2 cursor-pointer">Luyện theo sách ABC</p>
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                      Luyện theo sách ABC
+                    </p>
                   </div>
                 </div>
                 <Button
@@ -102,19 +114,19 @@ const LeverOverView = () => {
                     Theo đề thi JLPT các năm
                   </p>
                   <div className="text-[#0075FF]">
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Đề thi N4 tháng 6/2023
                     </p>
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Đề thi N4 tháng 12/2022
                     </p>
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Đề thi N4 tháng 6/2022
                     </p>
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Đề thi N4 tháng 12/2011
                     </p>
-                    <p className="mb-2 cursor-pointer">
+                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
                       Đề thi N4 tháng 6/2011
                     </p>
                   </div>

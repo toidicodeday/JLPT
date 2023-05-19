@@ -28,7 +28,7 @@ const TestPage = () => {
           <div className="">
             <Button
               type="primary"
-              className="bg-[#FB3357]"
+              className="bg-[#FB3357] hover:opacity-80"
               onClick={handleMoveExam}
             >
               Làm ngay
@@ -46,7 +46,7 @@ const TestPage = () => {
             </Tag>
             <Button
               type="text"
-              className="border border-solid border-[#FB3357] text-[#FB3357]"
+              className="border border-solid border-[#FB3357] text-[#FB3357] hover:bg-[#FB3357] hover:text-white"
               onClick={handleMoveReview}
             >
               Xem lại bài thi
@@ -61,7 +61,7 @@ const TestPage = () => {
           <div className="">
             <Button
               type="primary"
-              className="bg-[#FB3357]"
+              className="bg-[#FB3357] hover:opacity-80"
               onClick={handleMoveExam}
             >
               Làm ngay
@@ -76,7 +76,7 @@ const TestPage = () => {
           <div className="">
             <Button
               type="primary"
-              className="bg-[#FB3357]"
+              className="bg-[#FB3357] hover:opacity-80"
               onClick={handleMoveExam}
             >
               Làm ngay
@@ -91,7 +91,7 @@ const TestPage = () => {
           <div className="">
             <Button
               type="primary"
-              className="bg-[#FB3357]"
+              className="bg-[#FB3357] hover:opacity-80"
               onClick={handleMoveExam}
             >
               Làm ngay

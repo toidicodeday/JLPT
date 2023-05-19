@@ -45,10 +45,10 @@ const AFooter = () => {
               Luyện cùng bài tập tuhocjlpt.com
             </Typography>
             <div className="flex flex-col mt-5 gap-2">
-              <span>N1</span>
-              <span>N2</span>
-              <span>N3</span>
-              <span>N4</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
             </div>
           </Col>
           <Col span={6}>
@@ -56,10 +56,10 @@ const AFooter = () => {
               Luyện theo sách
             </Typography>
             <div className="flex flex-col mt-5 gap-2">
-              <span>N1</span>
-              <span>N2</span>
-              <span>N3</span>
-              <span>N4</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
             </div>
           </Col>
           <Col span={6}>
@@ -67,10 +67,10 @@ const AFooter = () => {
               Luyện đề
             </Typography>
             <div className="flex flex-col mt-5 gap-2">
-              <span>N1</span>
-              <span>N2</span>
-              <span>N3</span>
-              <span>N4</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
             </div>
           </Col>
           <Col span={6}>
@@ -78,10 +78,10 @@ const AFooter = () => {
               Phòng thi thử
             </Typography>
             <div className="flex flex-col mt-5 gap-2">
-              <span>N1</span>
-              <span>N2</span>
-              <span>N3</span>
-              <span>N4</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
+              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
             </div>
           </Col>
         </Row>

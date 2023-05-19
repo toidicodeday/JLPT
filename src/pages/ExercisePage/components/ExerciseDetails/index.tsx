@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const ExerciseDetail = () => {
   const navigate = useNavigate()
   const handleMoveLessonDetail = () => {
-    navigate('/exercise/lesson-detail')
+    navigate('/exercise/lesson-details')
   }
   return (
     <div className="w-full">
@@ -36,7 +36,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -48,7 +51,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -60,7 +66,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span>
                     <FaCrown className="border border-solid border-[#FFB800] text-[#FFB800] rounded py-[2px] px-[3px] text-xl w-[30px] h-[20px]" />
@@ -72,7 +81,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -86,7 +98,10 @@ const ExerciseDetail = () => {
           </Row>
           <Row className="mb-5">
             <Col span={4}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -99,7 +114,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -111,7 +129,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -123,7 +144,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span>
                     <FaCrown className="border border-solid border-[#FFB800] text-[#FFB800] rounded py-[2px] px-[3px] text-xl w-[30px] h-[20px]" />
@@ -135,7 +159,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -149,7 +176,10 @@ const ExerciseDetail = () => {
           </Row>
           <Row className="mb-5">
             <Col span={4}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -161,7 +191,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -173,7 +206,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -185,7 +221,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span>
                     <FaCrown className="border border-solid border-[#FFB800] text-[#FFB800] rounded py-[2px] px-[3px] text-xl w-[30px] h-[20px]" />
@@ -197,7 +236,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -211,7 +253,10 @@ const ExerciseDetail = () => {
           </Row>
           <Row className="mb-5">
             <Col span={4}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -223,7 +268,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -235,7 +283,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -247,7 +298,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span>
                     <FaCrown className="border border-solid border-[#FFB800] text-[#FFB800] rounded py-[2px] px-[3px] text-xl w-[30px] h-[20px]" />
@@ -259,7 +313,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -273,7 +330,10 @@ const ExerciseDetail = () => {
           </Row>
           <Row className="mb-5">
             <Col span={4}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -286,7 +346,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -298,7 +361,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -310,7 +376,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span>
                     <FaCrown className="border border-solid border-[#FFB800] text-[#FFB800] rounded py-[2px] px-[3px] text-xl w-[30px] h-[20px]" />
@@ -322,7 +391,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -336,7 +408,10 @@ const ExerciseDetail = () => {
           </Row>
           <Row className="mb-5">
             <Col span={4}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -349,7 +424,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -361,7 +439,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -373,7 +454,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span>
                     <FaCrown className="border border-solid border-[#FFB800] text-[#FFB800] rounded py-[2px] px-[3px] text-xl w-[30px] h-[20px]" />
@@ -385,7 +469,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -399,7 +486,10 @@ const ExerciseDetail = () => {
           </Row>
           <Row className="mb-5">
             <Col span={4}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -411,7 +501,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -423,7 +516,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -435,7 +531,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5  rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span>
                     <FaCrown className="border border-solid border-[#FFB800] text-[#FFB800] rounded py-[2px] px-[3px] text-xl w-[30px] h-[20px]" />
@@ -447,7 +546,10 @@ const ExerciseDetail = () => {
               </div>
             </Col>
             <Col span={4} offset={1}>
-              <div className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer">
+              <div
+                className="border border-solid border-[#D9D9D9] py-4 px-5 rounded-[20px] cursor-pointer"
+                onClick={handleMoveLessonDetail}
+              >
                 <div className="flex justify-between mb-5">
                   <span className="border border-solid border-[#16DB93] text-[#16DB93] rounded py-[2px] px-[3px] text-[10px] font-normal">
                     FREE
@@ -462,7 +564,7 @@ const ExerciseDetail = () => {
         </div>
         <Button
           type="dashed"
-          className="rounded-[20px] text-[#FB3357] border border-dashed border-[#FB3357] font-normal text-sm w-[150px] h-[40px] absolute bottom-[2%] left-[50%] translate-x-[-50%]"
+          className="rounded-[20px] text-[#FB3357] border border-dashed border-[#FB3357] font-normal text-sm w-[150px] h-[40px] absolute bottom-[2%] left-[50%] translate-x-[-50%] hover:bg-[#FB3357] hover:text-white"
         >
           Xem thêm
         </Button>

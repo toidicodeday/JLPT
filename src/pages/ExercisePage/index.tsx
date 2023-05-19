@@ -26,40 +26,40 @@ const ExercisePage = () => {
       tagColor: '#FFE7EB',
       textColor: 'black',
       name: ' Bài tập Từ vựng - Chọn từ đúng nghĩa',
-      translateX: '15%',
+      translateX: '20%',
     },
     {
       id: 4,
       tagColor: '#FFE7EB',
       textColor: 'black',
       name: ' Bài tập Từ vựng - Chọn từ đồng nghĩa',
-      translateX: '20%',
+      translateX: '50%',
     },
     {
       id: 5,
       tagColor: '#8EF9F3',
       textColor: 'white',
       name: ' Bài tập Ngữ pháp',
-      translateX: '25%',
+      translateX: '20%',
     },
     {
       id: 6,
       tagColor: '#593C8F',
       textColor: 'white',
       name: ' Bài tập Đọc hiểu',
-      translateX: '30%',
+      translateX: '10%',
     },
     {
       id: 7,
       tagColor: '#171738',
       textColor: 'white',
       name: 'Bài tập Nghe hiểu',
-      translateX: '35%',
+      translateX: '0%',
     },
   ]
 
   const handleMoveExerciseDetail = () => {
-    navigate('/exercise/exercise-detail')
+    navigate('/exercise/exercise-details')
   }
   return (
     <div className="w-full">
