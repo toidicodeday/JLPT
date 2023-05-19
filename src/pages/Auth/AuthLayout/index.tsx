@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import '../styles.scss'
 
 interface Props {
   children: ReactNode
@@ -7,10 +8,14 @@ interface Props {
 const AuthLayout = ({ children }: Props) => {
   return (
     <React.Fragment>
-      <div className="font-sans w-screen h-screen p-0 xl:p-12 hidden xl:block">
-        <div className="auth-card w-full h-full rounded-2xl xl:grid-cols-3 hidden xl:grid">
-          <div className="left-image col-span-1 rounded-tl-2xl rounded-bl-2xl"></div>
-          <div className="col-span-2 flex items-center justify-center">
+      <div className="font-sans w-screen h-screen p-0 xl:p-24 hidden xl:block">
+        <div className="w-full h-full xl:grid-cols-2 hidden xl:grid">
+          <div className="left-image col-span-1 flex items-center justify-center">
+            <div className="text-white font-bold text-4xl auth-text relative">
+              WELCOME BACK
+            </div>
+          </div>
+          <div className="col-span-1 flex items-center justify-center">
             {children}
           </div>
         </div>
