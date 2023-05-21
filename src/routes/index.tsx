@@ -21,6 +21,8 @@ import { SYSTEM_ROLE_KEY } from '@/utils/constant/constant'
 import { AuthorizeMeType } from '@/store/authSlice/types'
 import { AdminMeType } from '@/services/accountApi/types'
 import MainLayout from '@/layouts'
+import HomePageLayout from '@/layouts/components/HomePageLayout'
+import routes from './public-routes'
 
 type Props = {}
 
@@ -352,14 +354,38 @@ const AppRoutes = (props: Props) => {
           <Route
             key="loginPath"
             path="*"
-            element={<Navigate to="/login" replace />}
-          />
+            element={<Navigate to="/Login" replace />}
+            // element={
+            //   <SendbirdProvider>
+            //     {/* <MainLayout
+            //       authorizeStatus={authorizeStatus}
+            //       adminInfo={adminInfo}
+            //     /> */}
+            //     <HomePageLayout
+            //       authorizeStatus={authorizeStatus}
+            //       adminInfo={adminInfo}
+            //     />
+            //   </SendbirdProvider>
+            // }
+          >
+            {/* {shortenRoutes(pageRoutes, authorizeStatus).map(route =>
+              createProtectedRoute(route, '/'),
+            )} */}
+            {/* {pageRoutes.map(route =>
+              createProtectedRoute(route, '/', isLogin),
+            )} */}
+            {/* <Route path="*" element={<Navigate to="/404" replace />} /> */}
+          </Route>
         )}
         {isLogin && authorizeStatus && (
           <Route
             element={
               <SendbirdProvider>
-                <MainLayout
+                {/* <MainLayout
+                  authorizeStatus={authorizeStatus}
+                  adminInfo={adminInfo}
+                /> */}
+                <HomePageLayout
                   authorizeStatus={authorizeStatus}
                   adminInfo={adminInfo}
                 />
