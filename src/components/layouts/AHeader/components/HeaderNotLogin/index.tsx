@@ -1,21 +1,11 @@
-import React, { useState } from 'react'
-import {
-  Button,
-  Layout,
-  Popover,
-  Tooltip,
-  Divider,
-  Avatar,
-  Typography,
-} from 'antd'
-import { BsFillCaretDownFill } from 'react-icons/bs'
+import React from 'react'
+import { Button, Layout, Typography } from 'antd'
 import { Link, useNavigate } from 'react-router-dom'
 import useSbChannelUnreadCount from '@/components/SendbirdChat/hooks/channelHooks/useSbChannelUnreadCount'
 import { useUpdatePlayerIdWhenSignOutMutation } from '@/services/notificationApi'
 import { SB_GROUP_CUSTOM_TYPE } from '@/components/SendbirdChat/constant/sendbird.constant'
 import { useGetDocumentQuery } from '@/services/documentApi'
 import { AdminMeType } from '@/services/accountApi/types'
-import { HiOutlineLogout, HiOutlineMenuAlt2 } from 'react-icons/hi'
 import { loggedOut } from '@/store/authSlice'
 import { useDispatch } from 'react-redux'
 
@@ -27,7 +17,6 @@ interface Props {
 }
 
 const HeaderNotLogin = ({ adminInfo, showDrawer }: Props) => {
-  const [openAccPopover, setOpenAccPopover] = useState(false)
   const {} = useSbChannelUnreadCount({
     customeTypes: [
       SB_GROUP_CUSTOM_TYPE.ADMIN_ADMIN,
@@ -49,9 +38,6 @@ const HeaderNotLogin = ({ adminInfo, showDrawer }: Props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [updatePlayerIdWhenSignOut] = useUpdatePlayerIdWhenSignOutMutation()
-  const handleOpenAccPopoverChange = (newOpen: boolean) => {
-    setOpenAccPopover(newOpen)
-  }
   const handleLogout = async () => {
     // ctx?.sendbird.disconnect()
 

@@ -20,9 +20,7 @@ import { checkAuthorize, shortenRoutes } from '@/utils/helpers/authorize.helper'
 import { SYSTEM_ROLE_KEY } from '@/utils/constant/constant'
 import { AuthorizeMeType } from '@/store/authSlice/types'
 import { AdminMeType } from '@/services/accountApi/types'
-import MainLayout from '@/layouts'
 import HomePageLayout from '@/layouts/components/HomePageLayout'
-import routes from './public-routes'
 
 type Props = {}
 

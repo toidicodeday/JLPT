@@ -3,8 +3,6 @@ import {
   UpdateOrderSignedContractRequestType,
   UpdateOrderSignedLiquidationContractRequestType,
 } from '@/services/orderApi/types'
-import { DetailsOf } from './../commonResposntType.d'
-import { ListWithPageOf } from '@/services/commonResposntType'
 import {
   CreateLocationDetailsRequest,
   CreateLocationDetailsResponse,

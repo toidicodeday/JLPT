@@ -1,6 +1,5 @@
 import { ADMIN_ACC_FUNC } from './../../utils/constant/constant'
 import { GENDER } from '@/utils/constant/constant'
-import { SystemRole } from '../systemRoleApi/types'
 
 export type AdminAccount = {
   id: number
@@ -51,7 +50,6 @@ export type AdminAcctDetailsType = {
   dob: string | null
   addressId: number
   gender: string
-  systemRoles: SystemRole[] | null
   status: number | null
   managingAreaId: number | null
   updated_at: string

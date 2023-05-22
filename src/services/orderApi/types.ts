@@ -1,8 +1,3 @@
-import { FitmentGroupType } from './../serviceApi/types'
-import { DriverType } from '@/services/driverApi/type'
-import { VehicleCategoryType } from '../vehicleCategoryApi/types'
-import { VehicleType } from '../vehicleApi/type'
-
 export type CreateOrderRequest = {
   serviceId?: number
   status?: number
@@ -355,7 +350,6 @@ export type OrderDetailsType = {
   }[]
   orderFitmentItems: ParentOrderFitmentType[]
   orderLocations: OrderLocationType[]
-  orderVehicleCategories: VehicleCategoryType[]
   payDetailType: number | null
   payType: number | null
   pickupDate: string | null
@@ -407,7 +401,6 @@ export type OrderDetailsType = {
   signedContract: boolean
   contractUrl: string | null
   fitmentGroupId: number | null
-  fitmentGroup: Omit<FitmentGroupType, 'type'>
   enoughDriver: boolean
   audioRecords: string[] | null
   orderDriverVehicles: OrderDriverVehicleType[]
@@ -536,14 +529,12 @@ export type OrderLocationType = {
 export type OrderDriverVehicleType = {
   createdAt: string
   deletedAt: string | null
-  driver: Omit<DriverType, 'vehicles' | 'workingArea'>
   driverId: number
   id: number
   orderCode: string
   sort: number | null
   status: string
   updatedAt: string
-  vehicle: Omit<VehicleType, 'driver'>
   vehicleId: number
 }
 
@@ -578,7 +569,6 @@ export type OrderBillType = {
   note: string | null
   billDetails: OrderBillDetailsType[]
   driverId?: number
-  driver?: Omit<DriverType, 'workingArea'>
   discount?: number //ck thanh hung
   driverIncome?: number //thuc thu tai xe
   incomeTaxFee?: number //thu nhap ca nhan
