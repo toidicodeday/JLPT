@@ -7,54 +7,67 @@ import ExamImg from '../../../../assets/img/images/over-view-exam.png'
 import ComingSoonImg from '../.././../../assets/img/images/coming-soon.png'
 import ComingSoonBgImg from '../.././../../assets/img/images/coming-soon-bg.png'
 import '../../style.scss'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const LeverOverView = () => {
-  const navigate = useNavigate()
-  const handleMoveTestExam = () => {
-    navigate('/home/test-exam')
-  }
   return (
     <div className="w-full">
-      <div className="bg-[#FFCAD4] py-5 text-center">
-        <Typography className="font-semibold text-[#FB3357] text-5xl">
+      <div className="bg-[#FFCAD4] lg:py-5 md:py-5 sm:py-2 max-[640px]:py-2 text-center">
+        <Typography className="font-semibold text-[#FB3357] lg:text-5xl md:text-5xl sm:text-3xl max-[640px]:text-3xl">
           N4
         </Typography>
       </div>
-      <div className="py-10 px-32">
-        <img src={HotNew} alt="hot-new-img" className="cursor-pointer" />
+      <div className="py-10 lg:px-32 md:px-32 sm:px-10 max-[640px]:px-5">
+        <Link to={''}>
+          <img src={HotNew} alt="hot-new-img" className="w-full" />
+        </Link>
         <div className="mt-14">
-          <p className="font-semibold text-2xl text-black mb-7">
+          <p className="font-semibold lg:text-2xl md:text-2xl sm:text-xl max-[640px]:text-xl text-black mb-7">
             CÙNG LUYỆN TẬP
           </p>
-          <Row className="" gutter={60}>
-            <Col span={8}>
-              <div className="rounded-[20px] shadow-card overflow-hidden">
+          <Row className="" gutter={[{ xs: 20, sm: 30, md: 67, lg: 67 }, 30]}>
+            <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+              <div className="rounded-[20px] shadow-card overflow-hidden h-full flex flex-col justify-between">
                 <img
                   src={ExerciseImg}
                   alt="exercise-over-view-img"
-                  className="w-full"
+                  className="w-full border-solid border-b-[#F5F5F5] border-x-0 border-t-0"
                 />
                 <div className="py-7 px-6">
-                  <p className="font-semibold text-2xl black mb-7">
+                  <p className="font-semibold lg:text-2xl md:text-2xl sm:text-xl max-[640px]:text-xl black mb-7">
                     Theo bài tập tuhocjlpt.com
                   </p>
                   <div className="text-[#0075FF]">
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Cách đọc Kanji N3
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Cách đọc Kanji N3
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Cách đọc Kanji N3
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Cách đọc Kanji N3
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Cách đọc Kanji N3
-                    </p>
+                    </Link>
                   </div>
                 </div>
                 <Button
@@ -65,33 +78,48 @@ const LeverOverView = () => {
                 </Button>
               </div>
             </Col>
-            <Col span={8}>
-              <div className="rounded-[20px] shadow-card overflow-hidden">
+            <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+              <div className="rounded-[20px] shadow-card overflow-hidden h-full flex flex-col justify-between">
                 <img
                   src={BookImg}
                   alt="exercise-over-view-img"
-                  className="w-full"
+                  className="w-full border-solid border-b-[#F5F5F5] border-x-0 border-t-0"
                 />
                 <div className="py-7 px-6">
-                  <p className="font-semibold text-2xl black mb-7">
+                  <p className="font-semibold lg:text-2xl md:text-2xl sm:text-xl max-[640px]:text-xl black mb-7">
                     Theo sách luyện JLPT
                   </p>
                   <div className="text-[#0075FF]">
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Luyện N4 theo sách Kodokawa
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Luyện N4 theo sách Super moshi
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Luyện theo sách Kokaku Dekiru
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Luyện theo sách Nihongo
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Luyện theo sách ABC
-                    </p>
+                    </Link>
                   </div>
                 </div>
                 <Button
@@ -102,33 +130,48 @@ const LeverOverView = () => {
                 </Button>
               </div>
             </Col>
-            <Col span={8}>
-              <div className="rounded-[20px] shadow-card overflow-hidden">
+            <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+              <div className="rounded-[20px] shadow-card overflow-hidden h-full flex flex-col justify-between">
                 <img
                   src={ExamImg}
                   alt="exercise-over-view-img"
-                  className="w-full"
+                  className="w-full border-solid border-b-[#F5F5F5] border-x-0 border-t-0"
                 />
                 <div className="py-7 px-6">
-                  <p className="font-semibold text-2xl black mb-7">
+                  <p className="font-semibold lg:text-2xl md:text-2xl sm:text-xl max-[640px]:text-xl black mb-7">
                     Theo đề thi JLPT các năm
                   </p>
                   <div className="text-[#0075FF]">
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Đề thi N4 tháng 6/2023
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Đề thi N4 tháng 12/2022
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Đề thi N4 tháng 6/2022
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Đề thi N4 tháng 12/2011
-                    </p>
-                    <p className="mb-2 cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="mb-2 hover:text-[#FB3357] block text-box"
+                      to={''}
+                    >
                       Đề thi N4 tháng 6/2011
-                    </p>
+                    </Link>
                   </div>
                 </div>
                 <Button
@@ -141,9 +184,11 @@ const LeverOverView = () => {
             </Col>
           </Row>
         </div>
-        <div className="mt-14" onClick={handleMoveTestExam}>
-          <p className="font-semibold text-2xl text-black mb-7">THI THỬ JLPT</p>
-          <div className="relative cursor-pointer">
+        <div className="mt-14">
+          <p className="font-semibold lg:text-2xl md:text-2xl sm:text-xl max-[640px]:text-xl text-black mb-7">
+            THI THỬ JLPT
+          </p>
+          <Link className="relative" to={'/home/test-exam'}>
             <img
               src={ComingSoonBgImg}
               alt="coming-soon-bg-img"
@@ -154,7 +199,7 @@ const LeverOverView = () => {
               alt="coming-soon-img"
               className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
             />
-          </div>
+          </Link>
         </div>
       </div>
     </div>

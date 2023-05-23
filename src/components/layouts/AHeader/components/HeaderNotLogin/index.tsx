@@ -1,54 +1,10 @@
 import React from 'react'
 import { Button, Layout, Typography } from 'antd'
-import { Link, useNavigate } from 'react-router-dom'
-import useSbChannelUnreadCount from '@/components/SendbirdChat/hooks/channelHooks/useSbChannelUnreadCount'
-import { useUpdatePlayerIdWhenSignOutMutation } from '@/services/notificationApi'
-import { SB_GROUP_CUSTOM_TYPE } from '@/components/SendbirdChat/constant/sendbird.constant'
-import { useGetDocumentQuery } from '@/services/documentApi'
-import { AdminMeType } from '@/services/accountApi/types'
-import { loggedOut } from '@/store/authSlice'
-import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const { Header } = Layout
 
-interface Props {
-  adminInfo?: AdminMeType | null
-  showDrawer: () => void
-}
-
-const HeaderNotLogin = ({ adminInfo, showDrawer }: Props) => {
-  const {} = useSbChannelUnreadCount({
-    customeTypes: [
-      SB_GROUP_CUSTOM_TYPE.ADMIN_ADMIN,
-      SB_GROUP_CUSTOM_TYPE.SUPPORT_DRIVER,
-      SB_GROUP_CUSTOM_TYPE.SUPPORT_GUEST,
-      SB_GROUP_CUSTOM_TYPE.ORDER_DRIVER,
-      SB_GROUP_CUSTOM_TYPE.ORDER_GUEST,
-    ],
-  })
-  const { data: documents } = useGetDocumentQuery(
-    {
-      ref: 'admin',
-      refId: Number(adminInfo?.id),
-      query: 'limit=1&order=id:desc&search=type:=:0',
-    },
-    { skip: !adminInfo?.id },
-  )
-
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const [updatePlayerIdWhenSignOut] = useUpdatePlayerIdWhenSignOutMutation()
-  const handleLogout = async () => {
-    // ctx?.sendbird.disconnect()
-
-    await updatePlayerIdWhenSignOut({
-      userId: Number(adminInfo?.id),
-      currentPlayerId: localStorage.getItem('player_id'),
-    })
-    dispatch(loggedOut())
-    navigate('/login')
-  }
-
+const HeaderNotLogin = () => {
   return (
     <Header
       className="site-layout-background sticky z-40 w-full top-0 left-0 bg-[white]"
@@ -63,7 +19,7 @@ const HeaderNotLogin = ({ adminInfo, showDrawer }: Props) => {
         <Button
           type="text"
           className="bg-[#FB3357] rounded-[20px] text-white"
-          onClick={handleLogout}
+          // TODO handle sign in button
         >
           Đăng nhập
         </Button>

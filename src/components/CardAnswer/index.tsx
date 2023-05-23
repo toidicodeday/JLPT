@@ -3,9 +3,14 @@ import React, { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
 import ShowExpandAnswer from '../ShowExpandAnswer'
+import './style.scss'
 
-const CardAnswer = () => {
-  const [answer, setAnswer] = useState(false)
+type Props = {
+  number: number
+}
+
+const CardAnswer = (number: Props) => {
+  const [answer, setAnswer] = useState(true)
   const [checked, setChecked] = useState(true)
   return (
     <div>

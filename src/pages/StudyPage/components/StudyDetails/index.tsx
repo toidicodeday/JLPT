@@ -1,6 +1,6 @@
-import { Tag, Typography } from 'antd'
+import { Col, Row, Tag, Typography } from 'antd'
 import React from 'react'
-import Book from '../../../../assets/img/images/book-img.png'
+import Book from '../../../../assets/img/images/book-icon.png'
 
 const StudyDetails = () => {
   const exerciseList = [
@@ -30,7 +30,7 @@ const StudyDetails = () => {
       tagColor: '#FFE7EB',
       textColor: 'black',
       name: ' Bài tập Từ vựng - Chọn từ đồng nghĩa',
-      translateX: '50%',
+      translateX: '30%',
     },
     {
       id: 5,
@@ -62,34 +62,44 @@ const StudyDetails = () => {
           Gokaku Dekiru - N4
         </Typography>
       </div>
-      <div className="py-32 px-48 flex gap-12">
-        <div className="">
-          <div className="w-[500px] h-[500px] rounded-[50%] border-dashed border-[#FF261F96] flex items-center justify-center">
-            <div className="w-[449.7px] h-[449.7px] rounded-[50%] border-dashed border-[#8EF9F3] flex items-center justify-center">
-              <div className="w-[399.41px] h-[399.41px] rounded-[50%] border-dashed border-[#593C8F8C] flex items-center justify-center">
-                <div className="w-[349.11px] h-[349.11px] rounded-[50%] border-dashed border-[#1717386E] flex items-center justify-center">
-                  <img src={Book} alt="" />
+      <Row
+        gutter={[50, 30]}
+        className="py-32 lg:px-48 md:px-20 sm:px-20 max-sm:px-10"
+      >
+        <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+          <div className="flex items-center justify-center w-full h-full">
+            <div className="w-[100%] h-[100%] rounded-[50%] border-dashed border-[#FF261F96] flex items-center justify-center">
+              <div className="w-[95%] h-[95%] rounded-[50%] border-dashed border-[#8EF9F3] flex items-center justify-center">
+                <div className="w-[93%] h-[93%] rounded-[50%] border-dashed border-[#593C8F8C] flex items-center justify-center">
+                  <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#1717386E] flex items-center justify-center">
+                    <img src={Book} alt="" className="w-[90%] h-[90%]" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="">
-          {exerciseList.map(item => (
-            <div
-              key={item.id}
-              className={`mb-7 translate-x-[${item.translateX}]`}
-            >
-              <Tag
-                className={`py-4 px-5 rounded-[10px] text-${item.textColor} font-semibold text-xl cursor-pointer`}
-                color={item.tagColor}
+        </Col>
+        <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+          <div className="">
+            {exerciseList.map(item => (
+              <div
+                key={item.id}
+                className={`mb-7 translate-x-[${item.translateX}]`}
+                style={{
+                  transform: `translateX(${item.translateX})`,
+                }}
               >
-                {item.name}
-              </Tag>
-            </div>
-          ))}
-        </div>
-      </div>
+                <Tag
+                  className={`max-md:w-full py-4 px-5 rounded-[10px] text-${item.textColor} font-semibold text-xl cursor-pointer`}
+                  color={item.tagColor}
+                >
+                  {item.name}
+                </Tag>
+              </div>
+            ))}
+          </div>
+        </Col>
+      </Row>
     </div>
   )
 }

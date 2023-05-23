@@ -1,7 +1,5 @@
 import { lazy } from 'react'
 import IRoute from '../core/objects/IRoute'
-import { AiFillPieChart } from 'react-icons/ai'
-import { MENU_ACCESS_KEY } from '@/utils/constant/constant'
 import { lazyRetry } from '@/utils/helpers/routes.helper'
 
 //! Pages
@@ -9,12 +7,7 @@ const ExercisePage = lazy(() => lazyRetry(() => import('@/pages/ExercisePage')))
 const StudyPage = lazy(() => lazyRetry(() => import('@/pages/StudyPage')))
 const ProfilePage = lazy(() => lazyRetry(() => import('@/pages/Profile')))
 const TestPage = lazy(() => lazyRetry(() => import('@/pages/TestPage')))
-const TestExam = lazy(() =>
-  lazyRetry(() => import('@/pages/HomePage/components/TestExam')),
-)
-const LeverOverView = lazy(() =>
-  lazyRetry(() => import('@/pages/HomePage/components/LeverOverView')),
-)
+
 const Score = lazy(() =>
   lazyRetry(() => import('@/pages/ExercisePage/components/Score')),
 )
@@ -33,17 +26,8 @@ const TestDetails = lazy(() =>
 const Exam = lazy(() =>
   lazyRetry(() => import('@/pages/TestPage/components/Exam')),
 )
-const HomePage = lazy(() => lazyRetry(() => import('@/pages/HomePage')))
 
 const routes: IRoute[] = [
-  {
-    path: '/',
-    key: 'home',
-    name: 'Home',
-    hidden: true,
-    redirect: '/home',
-    accessKey: MENU_ACCESS_KEY.dashboard,
-  },
   {
     path: '/exercise',
     key: 'exercise',
@@ -119,30 +103,6 @@ const routes: IRoute[] = [
     name: 'Profile',
     hidden: true,
     component: ProfilePage,
-  },
-  {
-    path: '/home',
-    key: '/home',
-    name: 'Home',
-    icon: AiFillPieChart,
-    component: HomePage,
-    accessKey: MENU_ACCESS_KEY.dashboard,
-    children: [
-      {
-        path: '/over-view',
-        key: 'over-view',
-        name: 'Overview',
-        hidden: true,
-        component: LeverOverView,
-      },
-      {
-        path: '/test-exam',
-        key: 'test-exam',
-        name: 'Test Exam',
-        hidden: true,
-        component: TestExam,
-      },
-    ],
   },
 ]
 

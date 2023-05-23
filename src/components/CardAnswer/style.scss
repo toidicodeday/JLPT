@@ -1,0 +1,19 @@
+.success {
+    .ant-radio-checked .ant-radio-inner {
+        border-color: #16DB93;
+    }
+
+    .ant-radio-inner::after {
+        background-color: #16DB93;
+    }
+}
+
+.wrong {
+    .ant-radio-checked .ant-radio-inner {
+        border-color: #FFB800;
+    }
+
+    .ant-radio-inner::after {
+        background-color: #FFB800;
+    }
+}

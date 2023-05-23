@@ -14,13 +14,12 @@ import Cookies from 'js-cookie'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectAccessToken } from '@/store/authSlice/selector'
 import loginRoutes from './login-routes'
-import { SendbirdProvider } from '@/components/SendbirdChat'
 import { useLazyGetMeQuery } from '@/services/accountApi/account'
 import { checkAuthorize, shortenRoutes } from '@/utils/helpers/authorize.helper'
 import { SYSTEM_ROLE_KEY } from '@/utils/constant/constant'
 import { AuthorizeMeType } from '@/store/authSlice/types'
 import { AdminMeType } from '@/services/accountApi/types'
-import HomePageLayout from '@/layouts/components/HomePageLayout'
+import AuthLayout from '@/layouts/components/AuthLayout'
 
 type Props = {}
 
@@ -353,41 +352,15 @@ const AppRoutes = (props: Props) => {
             key="loginPath"
             path="*"
             element={<Navigate to="/Login" replace />}
-            // element={
-            //   <SendbirdProvider>
-            //     {/* <MainLayout
-            //       authorizeStatus={authorizeStatus}
-            //       adminInfo={adminInfo}
-            //     /> */}
-            //     <HomePageLayout
-            //       authorizeStatus={authorizeStatus}
-            //       adminInfo={adminInfo}
-            //     />
-            //   </SendbirdProvider>
-            // }
-          >
-            {/* {shortenRoutes(pageRoutes, authorizeStatus).map(route =>
-              createProtectedRoute(route, '/'),
-            )} */}
-            {/* {pageRoutes.map(route =>
-              createProtectedRoute(route, '/', isLogin),
-            )} */}
-            {/* <Route path="*" element={<Navigate to="/404" replace />} /> */}
-          </Route>
+          />
         )}
         {isLogin && authorizeStatus && (
           <Route
             element={
-              <SendbirdProvider>
-                {/* <MainLayout
-                  authorizeStatus={authorizeStatus}
-                  adminInfo={adminInfo}
-                /> */}
-                <HomePageLayout
-                  authorizeStatus={authorizeStatus}
-                  adminInfo={adminInfo}
-                />
-              </SendbirdProvider>
+              <AuthLayout
+                authorizeStatus={authorizeStatus}
+                adminInfo={adminInfo}
+              />
             }
           >
             {shortenRoutes(pageRoutes, authorizeStatus).map(route =>

@@ -9,7 +9,7 @@ import {
   Typography,
 } from 'antd'
 import { BsFillCaretDownFill } from 'react-icons/bs'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useSbChannelUnreadCount from '@/components/SendbirdChat/hooks/channelHooks/useSbChannelUnreadCount'
 import { useUpdatePlayerIdWhenSignOutMutation } from '@/services/notificationApi'
 import { SB_GROUP_CUSTOM_TYPE } from '@/components/SendbirdChat/constant/sendbird.constant'
@@ -23,10 +23,32 @@ const { Header } = Layout
 
 interface Props {
   adminInfo?: AdminMeType | null
-  showDrawer: () => void
+  showDrawer?: () => void
 }
 
 const AHeader = ({ adminInfo, showDrawer }: Props) => {
+  const navbars = [
+    {
+      id: 1,
+      label: ' Luyện bài tập',
+      path: '/exercise',
+    },
+    {
+      id: 2,
+      label: '   Luyện sách',
+      path: '/study',
+    },
+    {
+      id: 3,
+      label: ' Luyện đề',
+      path: '/test',
+    },
+    {
+      id: 4,
+      label: '  Thi thử',
+      path: '/home/test-exam',
+    },
+  ]
   const [openAccPopover, setOpenAccPopover] = useState(false)
   const {} = useSbChannelUnreadCount({
     customeTypes: [
@@ -68,47 +90,29 @@ const AHeader = ({ adminInfo, showDrawer }: Props) => {
       className="site-layout-background sticky z-40 w-full top-0 left-0 bg-[white]"
       style={{ padding: 0, backgroundColor: '#606168', color: '#FFF' }}
     >
-      <div className="h-full flex items-center justify-end px-32 p-0 shadow-sm">
+      <div className="h-full flex items-center xl:justify-end max-lg:justify-between md:px-32 max-md:px-10 shadow-sm">
+        <HiOutlineMenuAlt2
+          className="text-3xl text-[#00ffff] inline-block lg:hidden"
+          onClick={showDrawer}
+        />
         <Typography
           className="text-[#FB3457] font-semibold text-2xl cursor-pointer hover:opacity-80"
           onClick={() => navigate('/home')}
         >
           tuhocjlpt
         </Typography>
-        <HiOutlineMenuAlt2
-          className="text-3xl text-[#00ffff] inline-block xl:hidden"
-          onClick={showDrawer}
-        />
-        <div className="flex items-center justify-end flex-1">
-          <div className="text-[#707070] font-normal text-sm flex gap-5 cursor-pointer">
-            <div
-              className="flex items-center gap-3 hover:text-[#FB3457]"
-              onClick={() => navigate('/exercise')}
-            >
-              Luyện bài tập
-              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
-            </div>
-            <div
-              className="flex items-center gap-3 hover:text-[#FB3457]"
-              onClick={() => navigate('/study')}
-            >
-              Luyện sách
-              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
-            </div>
-            <div
-              className="flex items-center gap-3 hover:text-[#FB3457]"
-              onClick={() => navigate('/test')}
-            >
-              Luyện đề
-              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
-            </div>
-            <div
-              className="flex items-center gap-3 hover:text-[#FB3457]"
-              onClick={() => navigate('/home/test-exam')}
-            >
-              Thi thử
-              <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
-            </div>
+        <div className="flex items-center justify-end flex-1 max-lg:flex-grow-0">
+          <div className=" font-normal text-sm flex gap-5 cursor-pointer max-lg:hidden">
+            {navbars.map(item => (
+              <Link
+                key={item.id}
+                className="flex items-center gap-3 hover:text-[#FB3457] text-[#707070]"
+                to={item.path}
+              >
+                {item.label}
+                <BsFillCaretDownFill className="text-[#CCCCCC] text-xs" />
+              </Link>
+            ))}
           </div>
           <Popover
             content={
