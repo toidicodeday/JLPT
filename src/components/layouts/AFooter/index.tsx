@@ -35,54 +35,100 @@ const AFooter = () => {
           </div>
         </div>
       </div>
-      <div className="h-[294px] py-12 px-28 flex justify-between">
-        <Typography className="font-semibold text-[#FB3357] text-5xl">
-          tuhocjlpt
-        </Typography>
-        <Row className="" gutter={[20, 0]}>
-          <Col span={6}>
-            <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
-              Luyện cùng bài tập tuhocjlpt.com
+      <div className="h-[294px] py-12 lg:px-28 md:px-20 sm:px-20 max-sm:px-10">
+        <Row>
+          <Col lg={12} md={12} sm={24} xl={12}>
+            <Typography className="font-semibold text-[#FB3357] text-5xl max-md:hidden  max-sm:hidden">
+              tuhocjlpt
             </Typography>
-            <div className="flex flex-col mt-5 gap-2">
-              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
-            </div>
           </Col>
-          <Col span={6}>
-            <Typography className="font-bold text-sm text-[#707070]  min-h-[40px]">
-              Luyện theo sách
-            </Typography>
-            <div className="flex flex-col mt-5 gap-2">
-              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
-            </div>
-          </Col>
-          <Col span={6}>
-            <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
-              Luyện đề
-            </Typography>
-            <div className="flex flex-col mt-5 gap-2">
-              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
-            </div>
-          </Col>
-          <Col span={6}>
-            <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
-              Phòng thi thử
-            </Typography>
-            <div className="flex flex-col mt-5 gap-2">
-              <span className="cursor-pointer hover:text-[#FB3357]">N1</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N2</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N3</span>
-              <span className="cursor-pointer hover:text-[#FB3357]">N4</span>
-            </div>
+          <Col lg={12} md={12} sm={24} xl={12}>
+            <Row className="" gutter={[20, 0]}>
+              <Col span={6}>
+                <div className="flex flex-col justify-between h-full">
+                  <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
+                    Luyện cùng bài tập tuhocjlpt.com
+                  </Typography>
+                  <div className="flex flex-col mt-5 gap-2">
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N1
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N2
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N3
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N4
+                    </span>
+                  </div>
+                </div>
+              </Col>
+              <Col span={6}>
+                <div className="flex flex-col justify-between h-full">
+                  <Typography className="font-bold text-sm text-[#707070]  min-h-[40px]">
+                    Luyện theo sách
+                  </Typography>
+                  <div className="flex flex-col mt-5 gap-2">
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N1
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N2
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N3
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N4
+                    </span>
+                  </div>
+                </div>
+              </Col>
+              <Col span={6}>
+                <div className="flex flex-col justify-between h-full">
+                  <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
+                    Luyện đề
+                  </Typography>
+                  <div className="flex flex-col mt-5 gap-2">
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N1
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N2
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N3
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N4
+                    </span>
+                  </div>
+                </div>
+              </Col>
+              <Col span={6}>
+                <div className="flex flex-col justify-between h-full">
+                  <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
+                    Phòng thi thử
+                  </Typography>
+                  <div className="flex flex-col mt-5 gap-2">
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N1
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N2
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N3
+                    </span>
+                    <span className="cursor-pointer hover:text-[#FB3357]">
+                      N4
+                    </span>
+                  </div>
+                </div>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </div>

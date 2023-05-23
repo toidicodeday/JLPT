@@ -41,7 +41,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Nunito Sans'],
-      rammeto: ['Rammetto One'],
+      inter: ['Inter'],
     },
   },
   corePlugins: {

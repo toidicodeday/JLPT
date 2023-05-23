@@ -33,7 +33,7 @@ const NotFound = () => {
             <Button
               size="large"
               className="text-sm font-medium shadow text-white border-transparent rounded-lg bg-purple-600 cursor-pointer hover:bg-[#6a00a1]"
-              onClick={() => navigate('/dashboard')}
+              onClick={() => navigate('/')}
             >
               Quay lại trang chủ
             </Button>
