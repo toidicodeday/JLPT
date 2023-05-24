@@ -1,10 +1,14 @@
 import React from 'react'
 import { Button, Layout, Typography } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const { Header } = Layout
 
 const HeaderNotLogin = () => {
+  const navigate = useNavigate()
+  const handleLogin = () => {
+    navigate('/login')
+  }
   return (
     <Header
       className="site-layout-background sticky z-40 w-full top-0 left-0 bg-[white]"
@@ -20,6 +24,7 @@ const HeaderNotLogin = () => {
           type="text"
           className="bg-[#FB3357] rounded-[20px] text-white"
           // TODO handle sign in button
+          onClick={handleLogin}
         >
           Đăng nhập
         </Button>

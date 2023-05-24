@@ -15,8 +15,8 @@ const HomePage = lazy(() => lazyRetry(() => import('@/pages/HomePage')))
 const TestExam = lazy(() =>
   lazyRetry(() => import('@/pages/HomePage/components/TestExam')),
 )
-const LeverOverView = lazy(() =>
-  lazyRetry(() => import('@/pages/HomePage/components/LeverOverView')),
+const LevelOverView = lazy(() =>
+  lazyRetry(() => import('@/pages/HomePage/components/LevelOverView')),
 )
 
 const routes: IRoute[] = [
@@ -48,7 +48,7 @@ const routes: IRoute[] = [
     key: 'over-view',
     name: 'Overview',
     hidden: true,
-    component: LeverOverView,
+    component: LevelOverView,
   },
   {
     path: '/403',

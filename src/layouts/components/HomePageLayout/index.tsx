@@ -2,7 +2,7 @@ import ModalChat from '@/components/ModalChat'
 import AContent from '@/components/layouts/AContent'
 import { Layout, Row, Spin } from 'antd'
 import React, { PropsWithChildren, Suspense } from 'react'
-import HeaderNotLogin from '../../../components/layouts/AHeader/components/HeaderNotLogin'
+import HeaderNotLogin from '../../../components/layouts/AHeader/HeaderNotLogin'
 
 const HomePageLayout = ({ children }: PropsWithChildren) => {
   return (
