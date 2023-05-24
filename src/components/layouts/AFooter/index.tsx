@@ -5,6 +5,7 @@ import GGplay from '../../../assets/img/images/google-play.png'
 import APPStore from '../../../assets/img/images/app-store.png'
 import { Col, Row } from 'antd'
 import './style.scss'
+import { Link } from 'react-router-dom'
 
 const AFooter = () => {
   return (
@@ -50,18 +51,30 @@ const AFooter = () => {
                     Luyện cùng bài tập tuhocjlpt.com
                   </Typography>
                   <div className="flex flex-col mt-5 gap-2">
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N1
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N2
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N3
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N4
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -71,18 +84,30 @@ const AFooter = () => {
                     Luyện theo sách
                   </Typography>
                   <div className="flex flex-col mt-5 gap-2">
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N1
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N2
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N3
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N4
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -92,18 +117,30 @@ const AFooter = () => {
                     Luyện đề
                   </Typography>
                   <div className="flex flex-col mt-5 gap-2">
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N1
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N2
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N3
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N4
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -113,18 +150,30 @@ const AFooter = () => {
                     Phòng thi thử
                   </Typography>
                   <div className="flex flex-col mt-5 gap-2">
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N1
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N2
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N3
-                    </span>
-                    <span className="cursor-pointer hover:text-[#FB3357]">
+                    </Link>
+                    <Link
+                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                      to={''}
+                    >
                       N4
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </Col>
