@@ -1,11 +1,16 @@
 import React from 'react'
 import BGImg from '../../../../assets/img/images/test-exam-img.png'
-import { Button, Col, Row } from 'antd'
+import { Button, Col, Row, message } from 'antd'
 import '../../style.scss'
+import ButtonCustomer from '@/components/ButtonCustomer'
 
 const TestExam = () => {
+  const info = () => {
+    message.warning('Tính năng chưa khả dụng')
+  }
+
   return (
-    <div className="w-full pt-16 px-12 pb-72 relative">
+    <div className="w-full pt-16 md:px-12 max-md:px-5 pb-72 relative">
       <p className="font-semibold lg:text-2xl md:text-2xl sm:text-xl max-[640px]:text-xl text-black">
         THI THỬ JLPT
       </p>
@@ -13,19 +18,19 @@ const TestExam = () => {
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <div className="relative h-full">
             <img className="w-full h-full" src={BGImg} alt="" />
-            <span className="absolute top-[10%] left-[6%] bg-white border border-solid border-[#16DB93] text-[#16DB93] rounded py-1 px-2 font-normal">
+            <span className="max-md:text-[10px] absolute top-[10%] left-[6%] bg-white border border-solid border-[#16DB93] text-[#16DB93] rounded py-1 px-2 font-normal">
               FREE
             </span>
-            <div className="font-semibold lg:text-3xl md:text-xl sm:text-xl max-[640px]:text-xl text-[#FB3357] absolute top-[30%] left-[50%] translate-x-[-50%] w-4/5 text-center">
+            <div className="font-semibold md:text-3xl max-md:text-2xl max-sm:text-base text-[#FB3357] absolute top-[30%] left-[50%] translate-x-[-50%] w-4/5 text-center">
               <p>Đề thi thử JLPT N4</p>
               <p className="text-center">tháng 2/2023</p>
             </div>
-            <Button
-              type="text"
-              className="bg-[#FB3357] top-[60%] left-[50%] translate-x-[-50%] text-2xl text-white font-semibold py-4 px-6 h-[60px] rounded-[28px] absolute hover:opacity-80"
-            >
-              VÀO THI NGAY
-            </Button>
+            <ButtonCustomer
+              onClick={info}
+              className="sm:top-[75%] max-sm:top-[70%] left-[50%] translate-x-[-50%] absolute hover:opacity-80"
+              type="primary"
+              label=" VÀO THI NGAY"
+            />
           </div>
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
@@ -37,12 +42,12 @@ const TestExam = () => {
                 </span>
                 <p className="text-black">Đề thi thử JLPT N4 tháng 1/2023</p>
               </div>
-              <Button
-                type="text"
-                className="bg-[#FB3357] text-white py-2 px-7 h-[32px] rounded-[30px] hover:opacity-80"
-              >
-                Thi thử
-              </Button>
+
+              <ButtonCustomer
+                label=" Thi thử"
+                onClick={info}
+                className="hover:opacity-80"
+              />
             </div>
             <div className="p-6 flex items-center justify-between shadow-card rounded-[20px]">
               <div className="flex items-center gap-7">
@@ -51,12 +56,12 @@ const TestExam = () => {
                 </span>
                 <p className="text-black">Đề thi thử JLPT N4 tháng 1/2023</p>
               </div>
-              <Button
-                type="text"
-                className="bg-[#FB3357] text-white py-2 px-7 h-[32px] rounded-[30px] hover:opacity-80"
-              >
-                Thi thử
-              </Button>
+
+              <ButtonCustomer
+                label=" Thi thử"
+                onClick={info}
+                className="hover:opacity-80"
+              />
             </div>
             <div className="p-6 flex items-center justify-between shadow-card rounded-[20px]">
               <div className="flex items-center gap-7">
@@ -65,19 +70,21 @@ const TestExam = () => {
                 </span>
                 <p className="text-black">Đề thi thử JLPT N4 tháng 1/2023</p>
               </div>
-              <Button
-                type="text"
-                className="bg-[#FB3357] text-white py-2 px-7 h-[32px] rounded-[30px] hover:opacity-80"
-              >
-                Thi thử
-              </Button>
+
+              <ButtonCustomer
+                label=" Thi thử"
+                onClick={info}
+                className="hover:opacity-80"
+              />
             </div>
           </div>
         </Col>
       </Row>
+
       <Button
+        onClick={info}
         type="text"
-        className="absolute lg:bottom-[30%] md:bottom-[30%] sm:bottom-[20%] max-[640px]:bottom-[20%] left-[50%] translate-x-[-50%] text-[#FB3357] hover:opacity-80"
+        className="absolute md:bottom-[30%] max-md:bottom-[25%] left-[50%] translate-x-[-50%] text-[#FB3357] hover:opacity-80"
       >
         Xem thêm
       </Button>
