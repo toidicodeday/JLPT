@@ -28,7 +28,7 @@ const HomePage = () => {
   return (
     <HomePageLayout authorizeStatus={null} adminInfo={null}>
       <div className="w-full min-h-screen bgc pb-24 pt-32">
-        <div className="font-semibold lg:text-7xl md:text-5xl sm:text-3xl max-[640px]:text-3xl text-black w-fit mx-auto flex flex-col items-end mb-32">
+        <div className="font-semibold lg:text-7xl md:text-5xl sm:text-3xl max-sm:text-xl text-black w-fit mx-auto flex flex-col items-end mb-32">
           <p className="mb-3">KHO SÁCH, ĐỀ LUYỆN THI</p>
           <p className="w-fit text-end relative">
             JLPT CÁC CẤP ĐỘ
@@ -50,7 +50,7 @@ const HomePage = () => {
             <Col key={item.id} xs={24} sm={12} md={12} lg={6} xl={6}>
               <Link
                 className="flex justify-center relative cursor-pointer"
-                to={'/home/over-view'}
+                to={'/over-view'}
               >
                 <img src={leverImg} alt="lever-img" />
                 <p className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-semibold text-7xl text-white">
