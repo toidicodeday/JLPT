@@ -1,11 +1,11 @@
 import React from 'react'
 import BGImg from '../../../../assets/img/images/test-exam-img.png'
-import { Button, Col, Row, message } from 'antd'
+import { Button as AntButton, Col, Row, message } from 'antd'
+import Button from '../../../../components/Button'
 import '../../style.scss'
-import ButtonCustomer from '@/components/ButtonCustomer'
 
 const TestExam = () => {
-  const info = () => {
+  const showWarning = () => {
     message.warning('Tính năng chưa khả dụng')
   }
 
@@ -25,8 +25,8 @@ const TestExam = () => {
               <p>Đề thi thử JLPT N4</p>
               <p className="text-center">tháng 2/2023</p>
             </div>
-            <ButtonCustomer
-              onClick={info}
+            <Button
+              onClick={showWarning}
               className="sm:top-[75%] max-sm:top-[70%] left-[50%] translate-x-[-50%] absolute hover:opacity-80"
               type="primary"
               label=" VÀO THI NGAY"
@@ -43,9 +43,9 @@ const TestExam = () => {
                 <p className="text-black">Đề thi thử JLPT N4 tháng 1/2023</p>
               </div>
 
-              <ButtonCustomer
+              <Button
                 label=" Thi thử"
-                onClick={info}
+                onClick={showWarning}
                 className="hover:opacity-80"
               />
             </div>
@@ -57,9 +57,9 @@ const TestExam = () => {
                 <p className="text-black">Đề thi thử JLPT N4 tháng 1/2023</p>
               </div>
 
-              <ButtonCustomer
+              <Button
                 label=" Thi thử"
-                onClick={info}
+                onClick={showWarning}
                 className="hover:opacity-80"
               />
             </div>
@@ -71,9 +71,9 @@ const TestExam = () => {
                 <p className="text-black">Đề thi thử JLPT N4 tháng 1/2023</p>
               </div>
 
-              <ButtonCustomer
+              <Button
                 label=" Thi thử"
-                onClick={info}
+                onClick={showWarning}
                 className="hover:opacity-80"
               />
             </div>
@@ -81,13 +81,13 @@ const TestExam = () => {
         </Col>
       </Row>
 
-      <Button
-        onClick={info}
+      <AntButton
+        onClick={showWarning}
         type="text"
-        className="absolute md:bottom-[30%] max-md:bottom-[25%] left-[50%] translate-x-[-50%] text-[#FB3357] hover:opacity-80"
+        className="absolute md:bottom-[30%] max-md:bottom-[25%] left-[50%] translate-x-[-50%] text-[#FB3357] hover:opacity-80 outline-none"
       >
         Xem thêm
-      </Button>
+      </AntButton>
     </div>
   )
 }
