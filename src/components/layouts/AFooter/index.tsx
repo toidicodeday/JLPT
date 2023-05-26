@@ -36,7 +36,7 @@ const AFooter = () => {
           </div>
         </div>
       </div>
-      <div className="h-[294px] py-12 lg:px-28 md:px-20 sm:px-20 max-sm:px-10 mb-3">
+      <div className="h-[294px] py-12 lg:px-28 md:px-20 sm:px-20 max-sm:px-5 mb-3">
         <Row>
           <Col lg={12} md={12} sm={24} xl={12}>
             <Typography className="font-semibold text-[#FB3357] text-5xl max-md:hidden  max-sm:hidden">

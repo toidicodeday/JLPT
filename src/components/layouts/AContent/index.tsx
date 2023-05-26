@@ -17,7 +17,9 @@ const AContent = (props: Props) => {
         background: 'white',
       }}
     >
-      <div className="flex flex-col h-full">{props.children}</div>
+      <div className="flex flex-col h-full overflow-hidden">
+        {props.children}
+      </div>
     </Content>
   )
 }

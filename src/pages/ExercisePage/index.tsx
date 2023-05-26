@@ -63,14 +63,14 @@ const ExercisePage = () => {
   }
   return (
     <div className="w-full">
-      <div className="bg-[#FFCAD4] lg:py-5 md:py-2 sm:py-2 max-[640px]:py-2 text-center">
-        <Typography className="font-semibold text-[#FB3357] lg:text-5xl md:text-3xl sm:text-3xl max-[640px]:text-3xl">
+      <div className="bg-[#FFCAD4] lg:py-5 sm:py-2 max-sm:py-2 text-center">
+        <Typography className="font-semibold text-[#FB3357] lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
           Bài tập tuhocjlpt - N4
         </Typography>
       </div>
       <Row
         gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 30]}
-        className="lg:py-32 max-lg:py-20 xl:px-48 max-xl:px-20 max-sm:px-10"
+        className="lg:py-32 max-lg:py-20 xl:px-48 max-xl:px-20 max-sm:px-5"
       >
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <div className="flex items-center justify-center w-full h-full">
@@ -90,14 +90,14 @@ const ExercisePage = () => {
             {exerciseList.map(item => (
               <div
                 key={item.id}
-                className={`mb-7 max-lg:translate-x-0`}
+                className={`mb-5 max-lg:translate-x-0`}
                 style={{
                   transform: `translateX(${item.translateX})`,
                 }}
               >
                 <Tag
                   onClick={handleMoveExerciseDetail}
-                  className={`max-lg:w-full py-4 px-5 rounded-[10px] text-${item.textColor} font-semibold text-xl cursor-pointer`}
+                  className={`max-lg:w-full xl:py-4 max-xl:py-3 px-5 rounded-[10px] text-${item.textColor} font-semibold sm:text-lg  max-sm:text-xs cursor-pointer`}
                   color={item.tagColor}
                 >
                   {item.name}
