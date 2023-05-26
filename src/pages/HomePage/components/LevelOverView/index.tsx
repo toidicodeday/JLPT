@@ -21,7 +21,7 @@ const LevelOverView = () => {
           N4
         </Typography>
       </div>
-      <div className="py-10 lg:px-32 md:px-32 sm:px-10 max-[640px]:px-5">
+      <div className="py-10 lg:px-32 sm:px-20 max-sm:px-5">
         <Link to={'/trial-exam'}>
           <img src={HotNew} alt="hot-new-img" className="w-full" />
         </Link>
@@ -204,7 +204,7 @@ const LevelOverView = () => {
             <img
               src={ComingSoonImg}
               alt="coming-soon-img"
-              className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+              className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[70%] h-[70%] bg-cover"
             />
           </div>
         </div>
