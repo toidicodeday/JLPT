@@ -1,80 +1,193 @@
-import { Button, Input, Radio, RadioChangeEvent, Space, Typography } from 'antd'
-import React, { useState } from 'react'
+import { Typography } from 'antd'
+import Button from '@/components/Button'
+import React, { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import RadioGroup from '@/components/RadioGroup'
 
 const LessonDetail = () => {
-  const [value, setValue] = useState(1)
-
-  const onChange = (e: RadioChangeEvent) => {
-    console.log('radio checked', e.target.value)
-    setValue(e.target.value)
-  }
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const navigate = useNavigate()
+  const [userAnswers, setUserAnswers] = useState<string[]>([])
+  console.log('userAnswers', userAnswers)
+
+  const currentAnswer = userAnswers[currentQuestionIndex]
+  console.log('currentAnswer', currentAnswer)
+
+  const questions = [
+    {
+      id: 1,
+      question: '[01]. Nội dung đề bài câu 1',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 2,
+      question: '[02]. Nội dung đề bài câu 2',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 3,
+      question: '[03]. Nội dung đề bài câu 3',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 4,
+      question: '[04]. Nội dung đề bài câu 4',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 5,
+      question: '[05]. Nội dung đề bài câu 5',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 6,
+      question: '[06]. Nội dung đề bài câu 6',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 7,
+      question: '[07]. Nội dung đề bài câu 7',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 8,
+      question: '[08]. Nội dung đề bài câu 8',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 9,
+      question: '[09]. Nội dung đề bài câu 9',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+    {
+      id: 10,
+      question: '[10]. Nội dung đề bài câu 10',
+      answers: [
+        { id: 1, label: 'Đáp án A', value: '1' },
+        { id: 2, label: 'Đáp án B', value: '2' },
+        { id: 3, label: 'Đáp án C', value: '3' },
+        { id: 4, label: 'Đáp án D', value: '4' },
+      ],
+    },
+  ]
   const handleMoveScore = () => {
     navigate('/exercise/score')
   }
-  const results = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const handleNextQuestion = useCallback(() => {
+    setCurrentQuestionIndex(prevIndex => {
+      if (prevIndex >= questions.length - 1) return questions.length - 1
+      return prevIndex + 1
+    })
+  }, [questions.length])
+  const handlePrevQuestion = useCallback(() => {
+    setCurrentQuestionIndex(prevIndex => {
+      if (prevIndex <= 0) return (prevIndex = 0)
+      return prevIndex - 1
+    })
+  }, [])
+
+  const handleSelectAnswer = (userAnswer: string) => {
+    const newUserAnswers = userAnswers.slice()
+    newUserAnswers[currentQuestionIndex] = userAnswer
+    setUserAnswers(newUserAnswers)
+  }
+
   return (
     <div className="w-full">
-      <div className="bg-[#FFCAD4] lg:py-5 md:py-2 sm:py-2 max-[640px]:py-2 text-center">
-        <Typography className="font-semibold text-[#FB3357] lg:text-5xl md:text-3xl sm:text-3xl max-[640px]:text-3xl">
+      <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
+        <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
           [1 ~ 10] Cách đọc Kanji N4
         </Typography>
       </div>
-      <div className="py-7 lg:px-32 md:px-32 max-md:px-20">
-        <div className="shadow rounded-[20px] p-7 min-h-[574px] text-black font-normal">
-          <div className="mb-8">[05]. Nội dung đề bài</div>
+      <div className="py-7 xl:px-32 sm:px-20 max-sm:px-5">
+        <div className="shadow rounded-3xl p-7 h-96 max-[350px]:h-80 text-black font-normal">
+          <div className="mb-8">{questions[currentQuestionIndex].question}</div>
           <div className="text-black">
-            <Radio.Group onChange={onChange} value={value}>
-              <Space direction="vertical">
-                <Radio className="flex gap-[20px]" value={1}>
-                  Đáp án A
-                </Radio>
-                <Radio className="flex gap-[20px]" value={2}>
-                  Đáp án B
-                </Radio>
-                <Radio className="flex gap-[20px]" value={3}>
-                  Đáp án C
-                </Radio>
-                <Radio className="flex gap-[20px]" value={4}>
-                  Đáp án D
-                </Radio>
-              </Space>
-            </Radio.Group>
+            <RadioGroup
+              value={currentAnswer || 0}
+              options={questions[currentQuestionIndex].answers}
+              onChange={value => handleSelectAnswer(value.toString())}
+            />
           </div>
         </div>
-        <div className="flex gap-5 justify-end max-md:justify-center py-6">
+        <div className="flex gap-5 max-[400px]:gap-2 justify-end max-md:justify-center py-6">
           <Button
-            danger
-            className="rounded-[10px] px-5 hover:bg-[#FB3357] hover:text-white"
-          >
-            Quay lại
-          </Button>
+            onClick={handlePrevQuestion}
+            type="outline"
+            label="Quay lại"
+            className="hover:bg-primary hover:text-white"
+          />
           <Button
+            onClick={handleNextQuestion}
             type="primary"
-            className="bg-[#FB3357] border-0 rounded-[10px] font-bold px-5 hover:opacity-80"
-          >
-            Lưu và tiếp tục
-          </Button>
+            label="Lưu và tiếp tục"
+            className="hover:opacity-80"
+          />
           <Button
-            type="primary"
-            className="bg-[#D9D9D9] border-0 rounded-[10px] font-bold text-[#707070] px-5 hover:opacity-80"
             onClick={handleMoveScore}
-          >
-            Nộp bài
-          </Button>
+            type="secondary"
+            label="Nộp bài"
+            className="hover:opacity-80"
+          />
         </div>
-        <div className="bg-[#F5F5F5] pt-7 pb-10 px-[20px] flex justify-center gap-5 max-md:gap-2">
-          {results.map(item => (
+        <div className="bg-[#F5F5F5] pt-7 pb-10 px-5 flex justify-center sm:gap-5 max-sm:gap-5 max-[415px]:grid max-[415px]:grid-cols-5 max-[415px]:gap-2">
+          {questions.map(item => (
             <div
-              key={item}
-              className={`w-7 h-7 rounded-[50%] border border-solid ${
-                [1, 2, 3, 4].includes(item)
-                  ? 'bg-[#16DB93] text-white'
+              key={item.id}
+              className={`w-7 h-7  rounded-[50%] border border-solid ${
+                userAnswers
+                  .map((userAnswer, index) => index + 1)
+                  .includes(item.id)
+                  ? 'bg-aquaGreen text-white'
                   : 'bg-white'
-              } border-[#16DB93] text-[#16DB93] flex items-center justify-center`}
+              } border-aquaGreen text-aquaGreen flex items-center justify-center`}
             >
-              {item}
+              {item.id}
             </div>
           ))}
         </div>
