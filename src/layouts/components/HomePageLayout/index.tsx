@@ -1,4 +1,3 @@
-import ModalChat from '@/components/ModalChat'
 import AContent from '@/components/layouts/AContent'
 import { Layout, Row, Spin } from 'antd'
 import React, { PropsWithChildren, Suspense } from 'react'
@@ -22,7 +21,6 @@ const HomePageLayout = ({ children }: PropsWithChildren) => {
             }
           >
             <div className="flex-grow">{children}</div>
-            <ModalChat />
           </Suspense>
         </AContent>
       </Layout>

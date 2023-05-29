@@ -17,12 +17,10 @@
     "types": ["node"],
     "paths": {
       "@/*": ["./src/*"],
-      "@/icon/*": ["./src/components/Icons/*"],
       "@/img/*": ["./src/assets/img/*"],
       "@/layout/*": ["./src/components/layouts/*"],
-      "@/constant/*": ["./src/constants/*"],
-      "@/sendbird/*": ["./src/components/SendbirdChat/*"]
+      "@/constant/*": ["./src/constants/*"]
     }
   },
-  "include": ["src", "node_modules/@sendbird/uikit-react/index.d.ts"]
+  "include": ["src"]
 }

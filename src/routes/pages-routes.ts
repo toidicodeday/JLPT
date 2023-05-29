@@ -5,7 +5,6 @@ import { lazyRetry } from '@/utils/helpers/routes.helper'
 //! Pages
 const ExercisePage = lazy(() => lazyRetry(() => import('@/pages/ExercisePage')))
 const StudyPage = lazy(() => lazyRetry(() => import('@/pages/StudyPage')))
-const ProfilePage = lazy(() => lazyRetry(() => import('@/pages/Profile')))
 const TestPage = lazy(() => lazyRetry(() => import('@/pages/TestPage')))
 
 const Score = lazy(() =>
@@ -96,13 +95,6 @@ const routes: IRoute[] = [
         component: Exam,
       },
     ],
-  },
-  {
-    path: '/profile',
-    key: 'profile',
-    name: 'Profile',
-    hidden: true,
-    component: ProfilePage,
   },
 ]
 

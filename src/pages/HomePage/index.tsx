@@ -26,7 +26,7 @@ const HomePage = () => {
     },
   ]
   return (
-    <HomePageLayout authorizeStatus={null} adminInfo={null}>
+    <HomePageLayout>
       <div className="w-full min-h-screen bgc pb-24 pt-32">
         <div className="font-semibold lg:text-7xl md:text-5xl sm:text-3xl max-sm:text-xl text-black w-fit mx-auto flex flex-col items-end mb-32">
           <p className="mb-3">KHO SÁCH, ĐỀ LUYỆN THI</p>

@@ -1,7 +1,6 @@
 import IRoute from '../core/objects/IRoute'
 import { lazy } from 'react'
 import { lazyRetry } from '@/utils/helpers/routes.helper'
-import { MENU_ACCESS_KEY } from '@/utils/constant/constant'
 import { AiFillPieChart } from 'react-icons/ai'
 
 const Forbidden = lazy(() =>
@@ -26,7 +25,6 @@ const routes: IRoute[] = [
     name: 'Home',
     hidden: true,
     redirect: '/home',
-    accessKey: MENU_ACCESS_KEY.dashboard,
   },
   {
     path: '/home',
@@ -34,7 +32,6 @@ const routes: IRoute[] = [
     name: 'Home',
     icon: AiFillPieChart,
     component: HomePage,
-    accessKey: MENU_ACCESS_KEY.dashboard,
   },
   {
     path: '/trial-exam',
