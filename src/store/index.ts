@@ -3,7 +3,6 @@ import { setupListeners } from '@reduxjs/toolkit/query/react'
 import { baseAPI } from '@/services/baseApi'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import authReducer from '../store/authSlice/index'
-import chatReducer from '../store/chatSlice/index'
 
 export const store = configureStore({
   middleware: getDefaultMiddleware =>
@@ -11,7 +10,6 @@ export const store = configureStore({
   reducer: {
     [baseAPI.reducerPath]: baseAPI.reducer,
     authReducer,
-    chatReducer,
   },
 })
 

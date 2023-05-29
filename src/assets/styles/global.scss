@@ -13,39 +13,3 @@ p,
 pre {
   margin: 0;
 }
-
-.cs-message--incoming .cs-message__content,
-.cs-message.cs-message--incoming.cs-message--first .cs-message__content {
-  background-color: #ff665944;
-}
-
-.cs-message--outgoing .cs-message__content,
-.cs-message.cs-message--outgoing.cs-message--first .cs-message__content {
-  background-color: #ecd5d5;
-}
-
-.cs-message-input__content-editor-wrapper,
-.cs-message-input__content-editor-container,
-.cs-message-input__content-editor {
-  background-color: #ecd5d5;
-}
-
-.cs-chat-container .cs-message-input {
-  color: #ecd5d5;
-}
-
-.cs-button--send,
-.cs-message-separator {
-  color: #2192FF;
-}
-
-.cs-message-separator::before, .cs-message-separator::after {
-  background-color: #ecd5d5;
-}
-
-.ps__rail-y:hover>.ps__thumb-y,
-.ps__rail-y:focus>.ps__thumb-y,
-.ps__rail-y.ps--clicking .ps__thumb-y,
-.ps__thumb-y {
-  background-color: #ecd5d5;
-}

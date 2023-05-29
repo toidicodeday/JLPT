@@ -1,21 +1,14 @@
 import React, { Suspense } from 'react'
 import { Layout, Row, Spin } from 'antd'
 import { Outlet } from 'react-router-dom'
-import ModalChat from '@/components/ModalChat'
-import { AdminMeType } from '@/services/accountApi/types'
 import AContent from '@/components/layouts/AContent'
 import AHeader from '@/components/layouts/AHeader'
 import AFooter from '@/components/layouts/AFooter'
 
-interface Props {
-  authorizeStatus: { [key: string]: boolean } | null
-  adminInfo: AdminMeType | null
-}
-
-const AuthLayout = ({ authorizeStatus, adminInfo }: Props) => {
+const AuthLayout = () => {
   return (
     <Layout className="font-inter">
-      <AHeader adminInfo={adminInfo} />
+      <AHeader />
       <Layout>
         <AContent>
           <Suspense
@@ -32,7 +25,6 @@ const AuthLayout = ({ authorizeStatus, adminInfo }: Props) => {
             <div className="flex-grow">
               <Outlet />
             </div>
-            <ModalChat />
           </Suspense>
           <AFooter />
         </AContent>
