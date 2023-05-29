@@ -13,7 +13,7 @@ const LessonDetail = () => {
   const currentAnswer = userAnswers[currentQuestionIndex]
   const questions = [
     {
-      id: 1,
+      id: '1',
       question: '[01]. Nội dung đề bài câu 1',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -23,7 +23,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 2,
+      id: '2',
       question: '[02]. Nội dung đề bài câu 2',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -33,7 +33,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 3,
+      id: '3',
       question: '[03]. Nội dung đề bài câu 3',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -43,7 +43,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 4,
+      id: '4',
       question: '[04]. Nội dung đề bài câu 4',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -53,7 +53,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 5,
+      id: '5',
       question: '[05]. Nội dung đề bài câu 5',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -63,7 +63,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 6,
+      id: '6',
       question: '[06]. Nội dung đề bài câu 6',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -73,7 +73,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 7,
+      id: '7',
       question: '[07]. Nội dung đề bài câu 7',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -83,7 +83,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 8,
+      id: '8',
       question: '[08]. Nội dung đề bài câu 8',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -93,7 +93,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 9,
+      id: '9',
       question: '[09]. Nội dung đề bài câu 9',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -103,7 +103,7 @@ const LessonDetail = () => {
       ],
     },
     {
-      id: 10,
+      id: '10',
       question: '[10]. Nội dung đề bài câu 10',
       answers: [
         { id: 1, label: 'Đáp án A', value: '1' },
@@ -182,7 +182,7 @@ const LessonDetail = () => {
 
             return (
               <div
-                onClick={() => setCurrentQuestionIndex(item.id - 1)}
+                onClick={() => setCurrentQuestionIndex(quesIndex)}
                 key={item.id}
                 className={twMerge(
                   'w-7 h-7 rounded-[50%] border border-solid border-aquaGreen text-aquaGreen flex items-center justify-center cursor-pointer',
