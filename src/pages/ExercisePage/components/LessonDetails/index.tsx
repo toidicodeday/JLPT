@@ -3,16 +3,13 @@ import Button from '@/components/Button'
 import React, { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import RadioGroup from '@/components/RadioGroup'
+import './style.scss'
 
 const LessonDetail = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const navigate = useNavigate()
   const [userAnswers, setUserAnswers] = useState<string[]>([])
-  console.log('userAnswers', userAnswers)
-
   const currentAnswer = userAnswers[currentQuestionIndex]
-  console.log('currentAnswer', currentAnswer)
-
   const questions = [
     {
       id: 1,
@@ -178,14 +175,17 @@ const LessonDetail = () => {
         <div className="bg-[#F5F5F5] pt-7 pb-10 px-5 flex justify-center sm:gap-5 max-sm:gap-5 max-[415px]:grid max-[415px]:grid-cols-5 max-[415px]:gap-2">
           {questions.map(item => (
             <div
+              onClick={() => setCurrentQuestionIndex(item.id - 1)}
               key={item.id}
-              className={`w-7 h-7  rounded-[50%] border border-solid ${
+              className={`w-7 h-7 rounded-[50%] border border-solid ${
                 userAnswers
                   .map((userAnswer, index) => index + 1)
                   .includes(item.id)
                   ? 'bg-aquaGreen text-white'
                   : 'bg-white'
-              } border-aquaGreen text-aquaGreen flex items-center justify-center`}
+              } ${
+                currentQuestionIndex + 1 === item.id && 'active'
+              } border-aquaGreen text-aquaGreen flex items-center justify-center cursor-pointer`}
             >
               {item.id}
             </div>
