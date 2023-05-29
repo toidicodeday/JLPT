@@ -1,10 +1,11 @@
 import { Typography } from 'antd'
 import Button from '@/components/Button'
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import RadioGroup from '@/components/RadioGroup'
 import './style.scss'
-
+import { twMerge } from 'tailwind-merge'
+const lessonInfo = { title: ' [1 ~ 10] Cách đọc Kanji N4' }
 const LessonDetail = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const navigate = useNavigate()
@@ -115,18 +116,18 @@ const LessonDetail = () => {
   const handleMoveScore = () => {
     navigate('/exercise/score')
   }
-  const handleNextQuestion = useCallback(() => {
+  const handleNextQuestion = () => {
     setCurrentQuestionIndex(prevIndex => {
       if (prevIndex >= questions.length - 1) return questions.length - 1
       return prevIndex + 1
     })
-  }, [questions.length])
-  const handlePrevQuestion = useCallback(() => {
+  }
+  const handlePrevQuestion = () => {
     setCurrentQuestionIndex(prevIndex => {
-      if (prevIndex <= 0) return (prevIndex = 0)
+      if (prevIndex <= 0) return 0
       return prevIndex - 1
     })
-  }, [])
+  }
 
   const handleSelectAnswer = (userAnswer: string) => {
     const newUserAnswers = userAnswers.slice()
@@ -138,15 +139,17 @@ const LessonDetail = () => {
     <div className="w-full">
       <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
         <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
-          [1 ~ 10] Cách đọc Kanji N4
+          {lessonInfo.title}
         </Typography>
       </div>
       <div className="py-7 xl:px-32 sm:px-20 max-sm:px-5">
         <div className="shadow rounded-3xl p-7 h-96 max-[350px]:h-80 text-black font-normal">
-          <div className="mb-8">{questions[currentQuestionIndex].question}</div>
+          <div className="mb-8">
+            {questions[currentQuestionIndex]?.question}
+          </div>
           <div className="text-black">
             <RadioGroup
-              value={currentAnswer || 0}
+              value={currentAnswer || ''}
               options={questions[currentQuestionIndex].answers}
               onChange={value => handleSelectAnswer(value.toString())}
             />
@@ -173,23 +176,24 @@ const LessonDetail = () => {
           />
         </div>
         <div className="bg-[#F5F5F5] pt-7 pb-10 px-5 flex justify-center sm:gap-5 max-sm:gap-5 max-[415px]:grid max-[415px]:grid-cols-5 max-[415px]:gap-2">
-          {questions.map(item => (
-            <div
-              onClick={() => setCurrentQuestionIndex(item.id - 1)}
-              key={item.id}
-              className={`w-7 h-7 rounded-[50%] border border-solid ${
-                userAnswers
-                  .map((userAnswer, index) => index + 1)
-                  .includes(item.id)
-                  ? 'bg-aquaGreen text-white'
-                  : 'bg-white'
-              } ${
-                currentQuestionIndex + 1 === item.id && 'active'
-              } border-aquaGreen text-aquaGreen flex items-center justify-center cursor-pointer`}
-            >
-              {item.id}
-            </div>
-          ))}
+          {questions.map((item, quesIndex) => {
+            const isAnswered = userAnswers[quesIndex] !== undefined
+            const isActive = currentQuestionIndex === quesIndex
+
+            return (
+              <div
+                onClick={() => setCurrentQuestionIndex(item.id - 1)}
+                key={item.id}
+                className={twMerge(
+                  'w-7 h-7 rounded-[50%] border border-solid border-aquaGreen text-aquaGreen flex items-center justify-center cursor-pointer',
+                  isAnswered ? 'bg-aquaGreen text-white' : 'bg-white',
+                  isActive ? 'active' : '',
+                )}
+              >
+                {quesIndex + 1}
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
