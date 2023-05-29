@@ -3,9 +3,10 @@ import Button from '@/components/Button'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import RadioGroup from '@/components/RadioGroup'
-import './style.scss'
 import { twMerge } from 'tailwind-merge'
+
 const lessonInfo = { title: ' [1 ~ 10] Cách đọc Kanji N4' }
+
 const LessonDetail = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const navigate = useNavigate()
@@ -182,15 +183,19 @@ const LessonDetail = () => {
 
             return (
               <div
-                onClick={() => setCurrentQuestionIndex(quesIndex)}
                 key={item.id}
+                onClick={() => setCurrentQuestionIndex(quesIndex)}
                 className={twMerge(
-                  'w-7 h-7 rounded-[50%] border border-solid border-aquaGreen text-aquaGreen flex items-center justify-center cursor-pointer',
+                  'relative w-7 h-7',
+                  'text-aquaGreen flex items-center justify-center cursor-pointer',
+                  'rounded-full border border-solid border-aquaGreen',
                   isAnswered ? 'bg-aquaGreen text-white' : 'bg-white',
-                  isActive ? 'active' : '',
                 )}
               >
                 {quesIndex + 1}
+                {isActive && (
+                  <span className="w-2 h-2 rounded-full border bg-red-500 absolute -bottom-3" />
+                )}
               </div>
             )
           })}
