@@ -40,7 +40,7 @@ const BookStudyDetails = () => {
     {
       tagClassName: 'bg-haiti',
       textClassName: 'text-white',
-      wrapperClassName: '0',
+      wrapperClassName: 'ml-0',
     },
   ]
   const exerciseList = [
@@ -103,7 +103,7 @@ const BookStudyDetails = () => {
           </div>
         </Col>
         <Col xs={24} lg={12}>
-          {exerciseList.map((item, index) => (
+          {exerciseList.slice(0, 7).map((item, index) => (
             <div
               key={item.id}
               className={twMerge(
@@ -118,10 +118,6 @@ const BookStudyDetails = () => {
                   `${tagsClassName[index].tagClassName}`,
                   `${tagsClassName[index].textClassName}`,
                 )}
-                style={{
-                  backgroundColor: tagsClassName[index].tagClassName,
-                  color: tagsClassName[index].textClassName,
-                }}
               >
                 {item.name}
               </Tag>
