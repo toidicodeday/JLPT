@@ -4,7 +4,7 @@ import bookImg from '../../assets/img/images/book-img.png'
 import './style.scss'
 import { Link } from 'react-router-dom'
 
-const StudyPage = () => {
+const BookStudy = () => {
   const bookList = [
     {
       id: 1,
@@ -96,4 +96,4 @@ const StudyPage = () => {
   )
 }
 
-export default StudyPage
+export default BookStudy

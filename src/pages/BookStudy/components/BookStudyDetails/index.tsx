@@ -2,7 +2,7 @@ import { Col, Row, Tag, Typography } from 'antd'
 import React from 'react'
 import Book from '../../../../assets/img/images/book-icon.png'
 
-const StudyDetails = () => {
+const BookStudyDetails = () => {
   const exerciseList = [
     {
       id: 1,
@@ -104,4 +104,4 @@ const StudyDetails = () => {
   )
 }
 
-export default StudyDetails
+export default BookStudyDetails

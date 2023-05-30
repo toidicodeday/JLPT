@@ -4,7 +4,7 @@ import { lazyRetry } from '@/utils/helpers/routes.helper'
 
 //! Pages
 const ExercisePage = lazy(() => lazyRetry(() => import('@/pages/ExercisePage')))
-const StudyPage = lazy(() => lazyRetry(() => import('@/pages/StudyPage')))
+const BookStudy = lazy(() => lazyRetry(() => import('@/pages/BookStudy')))
 const TestPage = lazy(() => lazyRetry(() => import('@/pages/TestPage')))
 
 const Score = lazy(() =>
@@ -16,8 +16,8 @@ const ExerciseDetails = lazy(() =>
 const LessonDetails = lazy(() =>
   lazyRetry(() => import('@/pages/ExercisePage/components/LessonDetails')),
 )
-const StudyDetails = lazy(() =>
-  lazyRetry(() => import('@/pages/StudyPage/components/StudyDetails')),
+const BookStudyDetails = lazy(() =>
+  lazyRetry(() => import('@/pages/BookStudy/components/BookStudyDetails')),
 )
 const TestDetails = lazy(() =>
   lazyRetry(() => import('@/pages/TestPage/components/TestDetails')),
@@ -62,14 +62,14 @@ const routes: IRoute[] = [
     key: 'study',
     name: 'Study',
     hidden: true,
-    component: StudyPage,
+    component: BookStudy,
     children: [
       {
         path: '/study-details',
         key: 'study',
         name: 'Study',
         hidden: true,
-        component: StudyDetails,
+        component: BookStudyDetails,
       },
     ],
   },
