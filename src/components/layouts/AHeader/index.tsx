@@ -12,22 +12,22 @@ const AHeader = () => {
   const navbars = [
     {
       id: 1,
-      label: ' Luyện bài tập',
+      label: 'Luyện bài tập',
       path: '/exercise',
     },
     {
       id: 2,
-      label: '   Luyện sách',
+      label: 'Luyện sách',
       path: '/study',
     },
     {
       id: 3,
-      label: ' Luyện đề',
+      label: 'Luyện đề',
       path: '/test',
     },
     {
       id: 4,
-      label: '  Thi thử',
+      label: 'Thi thử',
       path: '/home/test-exam',
     },
   ]
