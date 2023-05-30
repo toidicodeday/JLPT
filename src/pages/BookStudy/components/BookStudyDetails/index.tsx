@@ -1,59 +1,52 @@
 import { Col, Row, Tag, Typography } from 'antd'
 import React from 'react'
-import Book from '../../../../assets/img/images/book-icon.png'
+import bookIcon from '../../../../assets/img/images/book-icon.png'
 import { useNavigate } from 'react-router-dom'
+import { twMerge } from 'tailwind-merge'
 
-const StudyDetails = () => {
+const BookStudyDetails = () => {
   const navigate = useNavigate()
-  const tagStyle = [
+  const tagsClassName = [
     {
-      id: 1,
-      tagColor: '#FF261F',
-      textClassName: '#fff',
-      marginLeft: '0',
+      tagClassName: 'bg-primary',
+      textClassName: 'text-white',
+      wrapperClassName: 'ml-0',
     },
     {
-      id: 2,
-      tagColor: '#FF261F',
-      textClassName: '#fff',
-      marginLeft: '48px',
+      tagClassName: 'bg-primary',
+      textClassName: 'text-white',
+      wrapperClassName: 'ml-12',
     },
     {
-      id: 3,
-      tagColor: '#FFE7EB',
-      textClassName: '#000',
-      marginLeft: '96px',
+      tagClassName: 'bg-secondPrimary',
+      textClassName: 'text-black',
+      wrapperClassName: 'ml-24',
     },
     {
-      id: 4,
-      tagColor: '#FFE7EB',
-      textClassName: '#000',
-      marginLeft: '140px',
+      tagClassName: 'bg-secondPrimary',
+      textClassName: 'text-black',
+      wrapperClassName: 'ml-36',
     },
     {
-      id: 5,
-      tagColor: '#8EF9F3',
-      textClassName: '#000',
-      marginLeft: '96px',
+      tagClassName: 'bg-electricBlue',
+      textClassName: 'text-black',
+      wrapperClassName: 'ml-24',
     },
     {
-      id: 6,
-      tagColor: '#593C8F',
-      textClassName: '#fff',
-      marginLeft: '48px',
+      tagClassName: 'bg-darkSlateBlue',
+      textClassName: 'text-white',
+      wrapperClassName: 'ml-12',
     },
     {
-      id: 7,
-      tagColor: '#171738',
-      textClassName: '#fff',
-      marginLeft: '0',
+      tagClassName: 'bg-haiti',
+      textClassName: 'text-white',
+      wrapperClassName: '0',
     },
   ]
   const exerciseList = [
     {
       id: 1,
       name: ' Bài tập Kanji - Cách đọc Kanji',
-      translateX: '0%',
     },
     {
       id: 2,
@@ -102,7 +95,7 @@ const StudyDetails = () => {
               <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#8EF9F3] flex items-center justify-center">
                 <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#593C8F8C] flex items-center justify-center">
                   <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#1717386E] flex items-center justify-center">
-                    <img src={Book} alt="" className="w-[90%] h-[90%]" />
+                    <img src={bookIcon} alt="" className="w-[90%] h-[90%]" />
                   </div>
                 </div>
               </div>
@@ -113,17 +106,21 @@ const StudyDetails = () => {
           {exerciseList.map((item, index) => (
             <div
               key={item.id}
-              className="mb-7 max-lg:ml-0"
-              style={{
-                marginLeft: tagStyle[index].marginLeft,
-              }}
+              className={twMerge(
+                `mb-7 max-lg:ml-0`,
+                `${tagsClassName[index].wrapperClassName}`,
+              )}
             >
               <Tag
                 onClick={goToExecisesDetail}
-                className={`max-lg:w-full py-4 px-5 rounded-xl font-semibold xl:text-xl max-xl:text-lg max-[500px]:text-xs cursor-pointer`}
+                className={twMerge(
+                  `max-lg:w-full py-4 px-5 rounded-xl font-semibold xl:text-xl max-xl:text-lg max-[500px]:text-xs cursor-pointer`,
+                  `${tagsClassName[index].tagClassName}`,
+                  `${tagsClassName[index].textClassName}`,
+                )}
                 style={{
-                  backgroundColor: tagStyle[index].tagColor,
-                  color: tagStyle[index].textClassName,
+                  backgroundColor: tagsClassName[index].tagClassName,
+                  color: tagsClassName[index].textClassName,
                 }}
               >
                 {item.name}
@@ -136,4 +133,4 @@ const StudyDetails = () => {
   )
 }
 
-export default StudyDetails
+export default BookStudyDetails
