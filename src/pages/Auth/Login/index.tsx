@@ -1,6 +1,5 @@
-import { Button, Form, Input, message } from 'antd'
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { useTypedDispatch } from '@/store'
 import Cookies from 'js-cookie'
@@ -8,7 +7,6 @@ import { KEYS, MESSAGES } from '@/constants'
 import { saveAccInfo, tokenReceived } from '@/store/authSlice'
 import '../styles.scss'
 import { get } from 'lodash'
-import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import AuthLayout from '../AuthLayout'
 import { MdOutlinePhoneAndroid } from 'react-icons/md'
 import { AiFillFacebook } from 'react-icons/ai'
@@ -28,9 +26,6 @@ const Login = () => {
 
   const handleLogin = async (values: any) => {
     try {
-      // TODO [login] chưa có api login,
-      // const loginRes = await loginAdmin(values)
-      // fake login response
       const loginRes = fakeAuthResponse
       if ('data' in loginRes) {
         dispatch(
@@ -60,10 +55,6 @@ const Login = () => {
     }
   }
 
-  const onFinishFailed = () => {
-    toast.error(MESSAGES.ERROR_LOGIN)
-  }
-
   const handleAuthPhoneNumber = () => {
     navigate('/auth-phone-number')
   }
@@ -74,55 +65,6 @@ const Login = () => {
         <div>
           <div className="sm:w-[28rem] md:w-[32rem] bg-white p-12 xl:mt-16 mx-auto">
             <p className="text-2xl font-bold text-center">Đăng nhập</p>
-            {/* <Form
-              name="roleForm"
-              layout="vertical"
-              initialValues={{ remember: true }}
-              onFinish={handleLogin}
-              onFinishFailed={onFinishFailed}
-              className="mt-10"
-            >
-              <div className="relative mb-3">
-                <Form.Item
-                  label="Tên đăng nhập"
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Hãy nhập địa chỉ email của bạn!',
-                    },
-                    { type: 'email', message: 'Email không đúng định dạng!' },
-                  ]}
-                >
-                  <Input size="large" prefix={<UserOutlined />} />
-                </Form.Item>
-              </div>
-              <div className="relative mb-3">
-                <Form.Item
-                  label="Mật khẩu"
-                  name={'password'}
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Hãy nhập mật khẩu của bạn!',
-                    },
-                  ]}
-                >
-                  <Input.Password size="large" prefix={<LockOutlined />} />
-                </Form.Item>
-              </div>
-              <Link
-                to="/forgot-password"
-                className="hover:underline hover:underline-offset-2 flex justify-end mb-10"
-              >
-                Quên mật khẩu?
-              </Link>
-              <Form.Item>
-                <Button block type="primary" size="large" htmlType="submit">
-                  Đăng nhập
-                </Button>
-              </Form.Item>
-            </Form> */}
             <div className="mt-20">
               <div
                 className="border border-solid border-aquaGreen px-9 py-3 text-aquaGreen flex justify-center font-bold text-xl rounded-xl mb-10 cursor-pointer"

@@ -5,7 +5,7 @@ import { useTypedDispatch } from '@/store'
 import { saveAccInfo, tokenReceived } from '@/store/authSlice'
 import Cookies from 'js-cookie'
 import { get } from 'lodash'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import OtpInput from 'react-otp-input'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -18,16 +18,16 @@ const fakeAuthResponse = {
   },
 }
 
+const numberInputs = 6
+
 const AuthPhoneOTP = () => {
   const navigate = useNavigate()
   const dispatch = useTypedDispatch()
   const [otp, setOtp] = useState('')
-  const numberInputs = 6
-  if (otp.length === numberInputs) {
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleLogin = () => {
     try {
-      // TODO [login] chưa có api login,
-      // const loginRes = await loginAdmin(values)
-      // fake login response
       const loginRes = fakeAuthResponse
       if (otp.length === numberInputs) {
         dispatch(
@@ -59,24 +59,27 @@ const AuthPhoneOTP = () => {
     }
   }
 
+  useEffect(() => {
+    if (otp.length >= numberInputs) {
+      handleLogin()
+    }
+  }, [otp, handleLogin])
+
   return (
     <AuthLayout>
       <div className="bg-white p-12 mx-auto">
         <p className="text-2xl font-bold text-center mb-14">Đăng nhập</p>
         <p className="text-2xl text-center mb-10">Nhập OTP</p>
         <OtpInput
-          inputStyle={{
-            width: '40px',
-            height: '50px',
-            marginLeft: '10px',
-            borderRadius: '4px',
-            fontWeight: '700',
-            fontSize: '20px',
-          }}
           value={otp}
           onChange={setOtp}
           numInputs={numberInputs}
-          renderInput={props => <input {...props} />}
+          renderInput={props => (
+            <input
+              {...props}
+              className="w-10 h-12 ml-3 rounded font-bold text-xl border-smokeyGrey border-solid"
+            />
+          )}
           shouldAutoFocus
         />
       </div>

@@ -4,10 +4,10 @@ import IRoute from '../core/objects/IRoute'
 
 const LoginScreen = lazy(() => lazyRetry(() => import('../pages/Auth/Login')))
 const AuthPhoneNumber = lazy(() =>
-  lazyRetry(() => import('../pages/Auth/AuthOption/AuthPhone/AuthPhoneNumber')),
+  lazyRetry(() => import('../pages/Auth/AuthPhoneNumber')),
 )
 const AuthPhoneOTP = lazy(() =>
-  lazyRetry(() => import('../pages/Auth/AuthOption/AuthPhone/AuthPhoneOTP')),
+  lazyRetry(() => import('../pages/Auth/AuthPhoneOTP')),
 )
 
 const routes: IRoute[] = [
