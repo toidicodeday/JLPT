@@ -15,16 +15,19 @@ export const handleError = function (error: any) {
   }
 }
 
-export const handleSucces = function (data: ResponseType<any> | void, cb?: any) {
-  if ((data != null) && data.statusCode.toString().startsWith('2')) {
+export const handleSucces = function (
+  data: ResponseType<any> | void,
+  cb?: any,
+) {
+  if (data != null && data.statusCode.toString().startsWith('2')) {
     if (cb) {
       cb(data)
     } else {
       return data
     }
-  } else if ((data != null) && data.statusCode == 204) {
+  } else if (data != null && data.statusCode == 204) {
     message.warning(
-      'No data! The requested resource does not exist on the server.'
+      'No data! The requested resource does not exist on the server.',
     )
   }
 }

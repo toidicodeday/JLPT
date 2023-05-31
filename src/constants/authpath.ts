@@ -1,1 +1,1 @@
-export const AuthPath = ['/login', '/forgot-password', '/reset-password']
+export const AuthPath = ['/login']

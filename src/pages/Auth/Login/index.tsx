@@ -7,19 +7,28 @@ import Cookies from 'js-cookie'
 import { KEYS, MESSAGES } from '@/constants'
 import { saveAccInfo, tokenReceived } from '@/store/authSlice'
 import '../styles.scss'
-import { useLoginAdminMutation } from '@/services/authApi'
 import { get } from 'lodash'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import AuthLayout from '../AuthLayout'
 
+const fakeAuthResponse = {
+  data: {
+    account: { phone: '324324', email: 'fsdfsd' },
+    accessToken: 'sdfsdf',
+    refreshToken: 'ádfsd',
+  },
+}
+
 const Login = () => {
   const navigate = useNavigate()
   const dispatch = useTypedDispatch()
-  const [loginAdmin, { isLoading }] = useLoginAdminMutation()
 
   const handleLogin = async (values: any) => {
     try {
-      const loginRes = await loginAdmin(values)
+      // TODO [login] chưa có api login,
+      // const loginRes = await loginAdmin(values)
+      // fake login response
+      const loginRes = fakeAuthResponse
       if ('data' in loginRes) {
         dispatch(
           saveAccInfo({
@@ -36,7 +45,7 @@ const Login = () => {
         Cookies.set(KEYS.REFRESH_TOKEN, loginRes?.data?.refreshToken || '')
 
         toast.success(MESSAGES.SUCESS_LOGIN)
-        navigate('/home')
+        navigate('/exercise')
       }
       if ('error' in loginRes) {
         toast.error(
@@ -102,13 +111,7 @@ const Login = () => {
                 Quên mật khẩu?
               </Link>
               <Form.Item>
-                <Button
-                  block
-                  type="primary"
-                  size="large"
-                  htmlType="submit"
-                  disabled={isLoading}
-                >
+                <Button block type="primary" size="large" htmlType="submit">
                   Đăng nhập
                 </Button>
               </Form.Item>

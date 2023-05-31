@@ -1,23 +1,13 @@
-import { AdminMeType } from '@/services/accountApi/types'
-import { useUpdatePlayerIdWhenSignOutMutation } from '@/services/notificationApi'
 import { loggedOut } from '@/store/authSlice'
-import { selectUserMe } from '@/store/authSlice/selector'
 import { Button } from 'antd'
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const NotFound = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const [updatePlayerIdWhenSignOut] = useUpdatePlayerIdWhenSignOutMutation()
-  const adminInfo: AdminMeType = useSelector(selectUserMe)
   const handleLogout = async () => {
-    // ctx?.sendbird.disconnect()
-    await updatePlayerIdWhenSignOut({
-      userId: Number(adminInfo?.id),
-      currentPlayerId: localStorage.getItem('player_id'),
-    })
     dispatch(loggedOut())
     navigate('/login')
   }
@@ -33,7 +23,7 @@ const NotFound = () => {
             <Button
               size="large"
               className="text-sm font-medium shadow text-white border-transparent rounded-lg bg-purple-600 cursor-pointer hover:bg-[#6a00a1]"
-              onClick={() => navigate('/dashboard')}
+              onClick={() => navigate('/')}
             >
               Quay lại trang chủ
             </Button>
