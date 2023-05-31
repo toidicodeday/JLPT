@@ -48,24 +48,52 @@ const BookStudyDetails = () => {
       id: 1,
       name: ' Bài tập Kanji - Cách đọc Kanji',
     },
+    {
+      id: 2,
+      name: ' Bài tập Kanji - Chọn Kanji phù hợp',
+    },
+    {
+      id: 3,
+      name: ' Bài tập Từ vựng - Chọn từ đúng nghĩa',
+    },
+    {
+      id: 4,
+      name: ' Bài tập Từ vựng - Chọn từ đồng nghĩa',
+    },
+    {
+      id: 5,
+      name: ' Bài tập Ngữ pháp',
+    },
+    {
+      id: 6,
+      name: ' Bài tập Đọc hiểu',
+    },
+    {
+      id: 7,
+      name: 'Bài tập Nghe hiểu',
+    },
   ]
+
+  const goToExecisesDetail = () => {
+    navigate('/exercise/exercise-details')
+  }
 
   return (
     <div className="w-full">
-      <div className="bg-[#FFCAD4] py-5 text-center">
-        <Typography className="font-semibold text-[#FB3357] text-5xl">
+      <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
+        <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
           Gokaku Dekiru - N4
         </Typography>
       </div>
       <Row
-        gutter={[50, 30]}
-        className="py-32 lg:px-48 md:px-20 sm:px-20 max-sm:px-10"
+        gutter={[{ xl: 50, lg: 30 }, 30]}
+        className="lg:py-32 max-lg:py-20 max-sm:py-10 lg:px-20 max-lg:px-20 max-md:px-10 max-sm:px-5"
       >
-        <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-          <div className="flex items-center justify-center w-full h-full">
-            <div className="w-[100%] h-[100%] rounded-[50%] border-dashed border-[#FF261F96] flex items-center justify-center">
-              <div className="w-[95%] h-[95%] rounded-[50%] border-dashed border-[#8EF9F3] flex items-center justify-center">
-                <div className="w-[93%] h-[93%] rounded-[50%] border-dashed border-[#593C8F8C] flex items-center justify-center">
+        <Col xs={24} lg={12}>
+          <div className="flex items-center justify-center w-full h-full max-xl:py-24 max-lg:py-0">
+            <div className="w-[85%] h-[85%] rounded-[50%] border-dashed border-[#FF261F96] flex items-center justify-center">
+              <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#8EF9F3] flex items-center justify-center">
+                <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#593C8F8C] flex items-center justify-center">
                   <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#1717386E] flex items-center justify-center">
                     <img src={bookIcon} alt="" className="w-[90%] h-[90%]" />
                   </div>
