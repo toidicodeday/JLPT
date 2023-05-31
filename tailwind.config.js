@@ -19,6 +19,7 @@ module.exports = {
         selectiveYellow: '#FFB800',
         smokeyGrey: '#707070',
         borderColor: '#D9D9D9',
+        crystalBlue: '#61AAFF',
       },
     },
     fontFamily: {

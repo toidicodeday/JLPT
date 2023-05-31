@@ -1,4 +1,4 @@
-import { Button, Form, Input } from 'antd'
+import { Button, Form, Input, message } from 'antd'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -10,6 +10,9 @@ import '../styles.scss'
 import { get } from 'lodash'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import AuthLayout from '../AuthLayout'
+import { MdOutlinePhoneAndroid } from 'react-icons/md'
+import { AiFillFacebook } from 'react-icons/ai'
+import { FcGoogle } from 'react-icons/fc'
 
 const fakeAuthResponse = {
   data: {
@@ -61,13 +64,17 @@ const Login = () => {
     toast.error(MESSAGES.ERROR_LOGIN)
   }
 
+  const handleAuthPhoneNumber = () => {
+    navigate('/auth-phone-number')
+  }
+
   return (
     <AuthLayout>
       <div className="flex justify-center">
         <div>
           <div className="sm:w-[28rem] md:w-[32rem] bg-white p-12 xl:mt-16 mx-auto">
             <p className="text-2xl font-bold text-center">Đăng nhập</p>
-            <Form
+            {/* <Form
               name="roleForm"
               layout="vertical"
               initialValues={{ remember: true }}
@@ -115,7 +122,36 @@ const Login = () => {
                   Đăng nhập
                 </Button>
               </Form.Item>
-            </Form>
+            </Form> */}
+            <div className="mt-20">
+              <div
+                className="border border-solid border-aquaGreen px-9 py-3 text-aquaGreen flex justify-center font-bold text-xl rounded-xl mb-10 cursor-pointer"
+                onClick={handleAuthPhoneNumber}
+              >
+                <div className="flex gap-5">
+                  <MdOutlinePhoneAndroid className="text-2xl" />
+                  <p>Đăng nhập bằng số điện thoại</p>
+                </div>
+              </div>
+              <div
+                className="border border-solid border-crystalBlue px-9 py-3 text-crystalBlue flex justify-center font-bold text-xl rounded-xl mb-10 cursor-pointer"
+                onClick={handleLogin}
+              >
+                <div className="flex items-center gap-5">
+                  <AiFillFacebook className="text-2xl" />
+                  <p>Đăng nhập bằng Facebook</p>
+                </div>
+              </div>
+              <div
+                className="border border-solid border-selectiveYellow px-9 py-3 text-selectiveYellow flex justify-center gap-5 font-bold text-xl rounded-xl mb-10 cursor-pointer"
+                onClick={handleLogin}
+              >
+                <div className="flex gap-5">
+                  <FcGoogle className="text-2xl" />
+                  <p>Đăng nhập với Google</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
