@@ -1,55 +1,57 @@
 import { Radio } from 'antd'
-import React, { useState } from 'react'
+import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
-import ShowExpandAnswer from '../ShowExpandAnswer'
+import AnswerDescription from '../AnswerDescription'
 import './style.scss'
+import { QuestionType } from '@/store/type'
+import { twMerge } from 'tailwind-merge'
 
 type Props = {
-  number: number
+  question: QuestionType
 }
 
-const CardAnswer = (number: Props) => {
-  const [answer, setAnswer] = useState(true)
-  const [checked, setChecked] = useState(true)
+const CardAnswer = ({ question }: Props) => {
   return (
-    <div>
-      <div className="">
-        <div className="mb-8 font-bold">[01]. Nội dung đề bài</div>
-        <div className="">
-          <div className={`flex gap-7 mb-5 text-[${answer ? '#16DB93' : ''}]`}>
-            <div
-              className={`flex gap-[14px] items-center ml-${
-                checked ? '0' : '8'
-              } ${answer ? 'success' : 'wrong'}`}
-            >
-              {answer ? (
-                <MdDone className="text-base" />
-              ) : (
-                <AiOutlineClose className="text-base text-[#FFB800]" />
-              )}
+    <div key={question.id}>
+      <div className="mb-8 font-bold">{question.question}</div>
+      {question.answers.map((answer, index) => {
+        const isUserSelect = answer.value === question.userAnswer
 
-              <Radio checked={checked}></Radio>
+        const isAnswerCorrect = answer.value === question.correctAnswer
+        const isAnswerWrong = answer.value !== question.correctAnswer
+
+        const isUserCorrect = isUserSelect && isAnswerCorrect
+        const isUserWrong = isUserSelect && isAnswerWrong
+
+        return (
+          <div key={answer.id} className="flex gap-7 mb-5 items-center">
+            <div className="w-2 grid place-items-center">
+              {isUserCorrect && <MdDone className="text-base text-aquaGreen" />}
+              {isUserWrong && (
+                <AiOutlineClose className="text-base text-selectiveYellow" />
+              )}
             </div>
-            <p className={`${answer ? 'text-[#16DB93]' : 'text-[#FFB800]'}`}>
-              Đáp án A
+            <Radio
+              checked={isUserSelect || isAnswerCorrect}
+              className={twMerge(
+                isAnswerCorrect ? 'success' : '',
+                isUserWrong ? 'wrong' : '',
+              )}
+              disabled
+            />
+            <p
+              className={twMerge(
+                isAnswerCorrect ? 'text-aquaGreen' : '',
+                isUserWrong ? 'text-selectiveYellow' : '',
+              )}
+            >
+              {answer.label}
             </p>
           </div>
-          <div className="flex gap-7 mb-5 ml-8">
-            <Radio checked={false}></Radio>
-            <p>Đáp án B</p>
-          </div>
-          <div className="flex gap-7 mb-5 ml-8">
-            <Radio checked={false}></Radio>
-            <p>Đáp án C</p>
-          </div>
-          <div className="flex gap-7 mb-5 ml-8">
-            <Radio checked={false}></Radio>
-            <p>Đáp án D</p>
-          </div>
-        </div>
-        <ShowExpandAnswer />
-      </div>
+        )
+      })}
+      <AnswerDescription text={question.description} />
     </div>
   )
 }

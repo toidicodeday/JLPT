@@ -7,8 +7,8 @@ const ExercisePage = lazy(() => lazyRetry(() => import('@/pages/ExercisePage')))
 const BookStudy = lazy(() => lazyRetry(() => import('@/pages/BookStudy')))
 const TestPage = lazy(() => lazyRetry(() => import('@/pages/TestPage')))
 
-const Score = lazy(() =>
-  lazyRetry(() => import('@/pages/ExercisePage/components/Score')),
+const ExerciseScore = lazy(() =>
+  lazyRetry(() => import('@/pages/ExercisePage/ExerciseScore')),
 )
 const ExerciseDetails = lazy(() =>
   lazyRetry(() => import('@/pages/ExercisePage/components/ExerciseDetails')),
@@ -53,7 +53,7 @@ const routes: IRoute[] = [
         key: 'score',
         name: 'Score',
         hidden: true,
-        component: Score,
+        component: ExerciseScore,
       },
     ],
   },
