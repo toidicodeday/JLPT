@@ -94,6 +94,13 @@ const routes: IRoute[] = [
         hidden: true,
         component: Exam,
       },
+      {
+        path: '/score',
+        key: 'score',
+        name: 'Score',
+        hidden: true,
+        component: ExerciseScore,
+      },
     ],
   },
 ]
