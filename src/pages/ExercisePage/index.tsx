@@ -3,7 +3,7 @@ import React from 'react'
 import { Col, Row, Tag } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
-import bookIcon from '../../assets/img/images/book-icon.png'
+import bookIcon from '@/img/images/book-icon.png'
 
 const ExercisePage = () => {
   const navigate = useNavigate()
