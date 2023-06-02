@@ -282,7 +282,7 @@ const Exam = () => {
     setUserAnswers(newUserAnswers)
   }
   const handleGoToScore = () => {
-    navigate('/exercise/score')
+    navigate('/test/score')
   }
   return (
     <div className="w-full">
@@ -331,7 +331,7 @@ const Exam = () => {
             className="hover:opacity-80"
           />
         </div>
-        <div className="bg-[#F5F5F5] pt-7 pb-10 px-8 flex gap-4 justify-center max-xl:grid max-xl:grid-cols-10 max-[415px]:grid max-[415px]:grid-cols-5 max-[415px]:gap-2">
+        <div className="bg-[#F5F5F5] pt-7 pb-10 px-8 flex flex-wrap gap-4 justify-center">
           {questions.map((item, quesIndex) => {
             const isAnswered = userAnswers[quesIndex] !== undefined
             const isActive = currentQuestionIndex === quesIndex
