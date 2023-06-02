@@ -31,7 +31,7 @@ const HomePage = () => {
         <div className="font-semibold lg:text-7xl md:text-5xl sm:text-3xl max-sm:text-xl text-black w-fit mx-auto flex flex-col items-end mb-32">
           <p className="mb-3">KHO SÁCH, ĐỀ LUYỆN THI</p>
           <p className="w-fit text-end relative">
-            JLPT CÁC CẤP ĐỘ
+            <span className="relative z-40">JLPT CÁC CẤP ĐỘ</span>
             <img
               className="absolute w-[35%] h-[35%] bottom-[4%] left-[-6%]"
               src={textUnderLine}
@@ -49,10 +49,14 @@ const HomePage = () => {
           {leverList.map(item => (
             <Col key={item.id} xs={24} sm={12} md={12} lg={6} xl={6}>
               <Link
-                className="flex justify-center relative cursor-pointer"
+                className="flex justify-center relative cursor-pointer transition-all"
                 to={'/over-view'}
               >
-                <img src={leverImg} alt="lever-img" />
+                <img
+                  src={leverImg}
+                  alt="lever-img"
+                  className="shadow-course "
+                />
                 <p className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-semibold text-7xl text-white">
                   {item.name}
                 </p>

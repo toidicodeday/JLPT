@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { HiOutlineLogout } from 'react-icons/hi'
 import { loggedOut } from '@/store/authSlice'
 import { useDispatch } from 'react-redux'
+import avatarImg from '../../../assets/img/images/avatar.jpg'
 
 const { Header } = Layout
 
@@ -28,7 +29,7 @@ const AHeader = () => {
     {
       id: 4,
       label: 'Thi thử',
-      path: '/home/test-exam',
+      path: '/trial-exam',
     },
   ]
 
@@ -68,10 +69,10 @@ const AHeader = () => {
           <div className="hidden xl:flex items-center">
             <Divider type="vertical" className="border-l-grayButton" />
             <div className="flex items-center hover:cursor-pointer mx-4">
-              <Avatar size={40} />
+              <Avatar size={40} src={avatarImg} />
               <div className="ml-2">
                 <div className="leading-4 text-black font-normal text-xs">
-                  UserName
+                  Nguyễn Đức Anh
                 </div>
               </div>
             </div>

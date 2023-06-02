@@ -44,7 +44,7 @@ const AFooter = () => {
             </Typography>
           </Col>
           <Col lg={12} md={12} sm={24} xl={12}>
-            <Row className="" gutter={[20, 0]}>
+            <Row className="max-sm:text-xs" gutter={[20, 0]}>
               <Col span={6}>
                 <div className="flex flex-col justify-between h-full">
                   <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">

@@ -61,13 +61,13 @@ const Login = () => {
 
   return (
     <AuthLayout>
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center">
         <div>
-          <div className="sm:w-[28rem] md:w-[32rem] bg-white p-12 xl:mt-16 mx-auto">
+          <div className="w-full max-w-lg bg-white p-6 sm:p-12 mx-auto">
             <p className="text-2xl font-bold text-center">Đăng nhập</p>
             <div className="mt-20">
               <div
-                className="border border-solid border-aquaGreen px-9 py-3 text-aquaGreen flex justify-center font-bold text-xl rounded-xl mb-10 cursor-pointer"
+                className="border border-solid border-aquaGreen px-4 lg:px-9 py-3 text-aquaGreen flex justify-center font-bold text-sm lg:text-xl rounded-xl mb-10 cursor-pointer"
                 onClick={handleAuthPhoneNumber}
               >
                 <div className="flex gap-5">
@@ -76,7 +76,7 @@ const Login = () => {
                 </div>
               </div>
               <div
-                className="border border-solid border-crystalBlue px-9 py-3 text-crystalBlue flex justify-center font-bold text-xl rounded-xl mb-10 cursor-pointer"
+                className="border border-solid border-crystalBlue px-4 lg:px-9 py-3 text-crystalBlue flex justify-center font-bold text-sm lg:text-xl rounded-xl mb-10 cursor-pointer"
                 onClick={handleLogin}
               >
                 <div className="flex items-center gap-5">
@@ -85,7 +85,7 @@ const Login = () => {
                 </div>
               </div>
               <div
-                className="border border-solid border-selectiveYellow px-9 py-3 text-selectiveYellow flex justify-center gap-5 font-bold text-xl rounded-xl mb-10 cursor-pointer"
+                className="border border-solid border-selectiveYellow px-4 lg:px-9 py-3 text-selectiveYellow flex justify-center gap-5 font-bold text-sm lg:text-xl rounded-xl mb-10 cursor-pointer"
                 onClick={handleLogin}
               >
                 <div className="flex gap-5">

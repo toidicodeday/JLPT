@@ -1,12 +1,24 @@
 import AContent from '@/components/layouts/AContent'
 import { Layout, Row, Spin } from 'antd'
-import React, { PropsWithChildren, Suspense } from 'react'
+import React, { PropsWithChildren, Suspense, useMemo } from 'react'
 import HeaderNotLogin from '../../../components/layouts/AHeader/HeaderNotLogin'
+import AHeader from '@/components/layouts/AHeader'
+import { useSelector } from 'react-redux'
+import { selectAccessToken } from '@/store/authSlice/selector'
+import { isConnectedUser } from '@/core/objects/Auth'
+import useAutoScrollToTop from '@/hooks/useAutoScrollToTop'
 
 const HomePageLayout = ({ children }: PropsWithChildren) => {
+  const accessToken = useSelector(selectAccessToken)
+  const isLogin = useMemo(
+    () => Boolean(accessToken) || isConnectedUser(),
+    [accessToken],
+  )
+  useAutoScrollToTop()
+
   return (
     <Layout className="font-inter">
-      <HeaderNotLogin />
+      {isLogin ? <AHeader /> : <HeaderNotLogin />}
       <Layout>
         <AContent>
           <Suspense
