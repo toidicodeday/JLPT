@@ -11,7 +11,7 @@ const HeaderNotLogin = () => {
   }
   return (
     <Header
-      className="site-layout-background sticky z-40 w-full top-0 left-0 bg-[white]"
+      className="site-layout-background sticky w-full top-0 left-0 bg-[white] z-50"
       style={{ padding: 0, backgroundColor: '#606168', color: '#FFF' }}
     >
       <div className="h-full flex items-center justify-between sm:px-32 max-sm:px-6  shadow-sm">
