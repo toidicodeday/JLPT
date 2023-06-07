@@ -31,7 +31,7 @@ const HomePage = () => {
         <div className="font-semibold lg:text-7xl md:text-5xl sm:text-3xl max-sm:text-xl text-black w-fit mx-auto flex flex-col items-end mb-32">
           <p className="mb-3">KHO SÁCH, ĐỀ LUYỆN THI</p>
           <p className="w-fit text-end relative">
-            <span className="relative z-40">JLPT CÁC CẤP ĐỘ</span>
+            <span className="relative z-10">JLPT CÁC CẤP ĐỘ</span>
             <img
               className="absolute w-[35%] h-[35%] bottom-[4%] left-[-6%]"
               src={textUnderLine}
