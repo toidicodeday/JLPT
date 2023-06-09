@@ -1,8 +1,11 @@
-import { Col, Row, Tag, Typography } from 'antd'
+import { Col, Row, Tag } from 'antd'
 import React from 'react'
 import bookIcon from '../../../../assets/img/images/book-icon.png'
 import { useNavigate } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
+import PageTitle from '@/components/PageTitle'
+
+const bookStudyInfo = { title: 'Gokaku Dekiru - N4' }
 
 const BookStudyDetails = () => {
   const navigate = useNavigate()
@@ -80,11 +83,7 @@ const BookStudyDetails = () => {
 
   return (
     <div className="w-full">
-      <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
-        <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
-          Gokaku Dekiru - N4
-        </Typography>
-      </div>
+      <PageTitle label={bookStudyInfo.title} />
       <Row
         gutter={[{ xl: 50, lg: 30 }, 30]}
         className="lg:py-32 max-lg:py-20 max-sm:py-10 lg:px-20 max-lg:px-20 max-md:px-10 max-sm:px-5"

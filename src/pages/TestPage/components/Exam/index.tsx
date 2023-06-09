@@ -332,7 +332,7 @@ const Exam = () => {
           />
         </div>
         <div className="bg-[#F5F5F5] pt-7 pb-10 px-8 flex flex-wrap gap-4 justify-center">
-          {questions.map((item, quesIndex) => {
+          {questions?.map((item, quesIndex) => {
             const isAnswered = userAnswers[quesIndex] !== undefined
             const isActive = currentQuestionIndex === quesIndex
 

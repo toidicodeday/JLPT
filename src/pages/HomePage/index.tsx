@@ -1,28 +1,32 @@
 import React from 'react'
 import textUnderLine from '../../assets/img/images/text-under-line.png'
-import leverImg from '../../assets/img/images/lever-img.png'
+import levelImg from '../../assets/img/images/lever-img.png'
 import './style.scss'
-import { Link } from 'react-router-dom'
 import { Col, Row } from 'antd'
 import HomePageLayout from '@/layouts/components/HomePageLayout'
+import LevelCard from '@/components/LevelCard'
 
 const HomePage = () => {
-  const leverList = [
+  const levelList = [
     {
-      id: 1,
+      id: '1',
       name: 'N1',
+      imgSrc: levelImg,
     },
     {
-      id: 2,
+      id: '2',
       name: 'N2',
+      imgSrc: levelImg,
     },
     {
-      id: 3,
+      id: '3',
       name: 'N3',
+      imgSrc: levelImg,
     },
     {
-      id: 4,
+      id: '4',
       name: 'N4',
+      imgSrc: levelImg,
     },
   ]
   return (
@@ -46,21 +50,9 @@ const HomePage = () => {
           className="w-fit mx-auto"
           gutter={[{ xs: 20, sm: 30, md: 67, lg: 67 }, 30]}
         >
-          {leverList.map(item => (
+          {levelList?.map(item => (
             <Col key={item.id} xs={24} sm={12} md={12} lg={6} xl={6}>
-              <Link
-                className="flex justify-center relative cursor-pointer transition-all"
-                to={'/over-view'}
-              >
-                <img
-                  src={leverImg}
-                  alt="lever-img"
-                  className="shadow-course "
-                />
-                <p className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-semibold text-7xl text-white">
-                  {item.name}
-                </p>
-              </Link>
+              <LevelCard imgSrc={item.imgSrc} name={item.name} />
             </Col>
           ))}
         </Row>
