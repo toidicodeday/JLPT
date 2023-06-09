@@ -12,3 +12,17 @@ export type QuestionType = {
   userAnswer?: number | string
   description?: string
 }
+
+export type CategoryItem = {
+  id: number | string
+  name: string
+  path: string
+}
+
+export type CategoryType = {
+  id: number | string
+  imgSrc: string
+  name: string
+  listItem: CategoryItem[]
+  path: string
+}

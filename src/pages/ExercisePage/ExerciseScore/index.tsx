@@ -1,10 +1,13 @@
-import { Divider, Typography } from 'antd'
+import { Divider } from 'antd'
 import React from 'react'
 import './style.scss'
 import CardAnswer from '@/components/CardAnswer'
+import PageTitle from '@/components/PageTitle'
 
 const description =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
+const exerciseInfo = { title: '[1 ~ 10] Cách đọc Kanji N4' }
 
 const questions = [
   {
@@ -156,18 +159,14 @@ const ExerciseScore = () => {
 
   return (
     <div className="w-full">
-      <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
-        <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
-          [1 ~ 10] Cách đọc Kanji N4
-        </Typography>
-      </div>
+      <PageTitle label={exerciseInfo.title} />
       <div className="py-7 xl:px-32 sm:px-20 max-sm:px-5 ">
         <div className="flex items-center max-[500px]:flex-col p-7 mb-7 lg:gap-10 max-lg:gap-5">
           <span className="bg-secondPrimary py-2 px-5 rounded-xl font-bold lg:text-3xl max-lg:text-xl text-primary">
             8/10
           </span>
           <div className="flex items-center max-[500px]:grid max-[500px]:grid-cols-5 lg:gap-5 max-lg:gap-2 overflow-hidden">
-            {questions.map((item, index) => {
+            {questions?.map((item, index) => {
               const isCorrect = item.userAnswer === item.correctAnswer
 
               return (
@@ -185,7 +184,7 @@ const ExerciseScore = () => {
           </div>
         </div>
         <div className="test-answer p-8 rounded-3xl text-black">
-          {questions.map((item, index) => (
+          {questions?.map((item, index) => (
             <div key={item.id} id={item.id} className="py-3">
               {index !== 0 && <Divider />}
               <CardAnswer question={item} />

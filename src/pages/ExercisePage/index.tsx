@@ -1,9 +1,11 @@
-import Typography from 'antd/lib/typography/Typography'
 import React from 'react'
 import { Tag } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 import bookCircles from '../../assets/img/images/book-circles.png'
+import PageTitle from '@/components/PageTitle'
+
+const exerciseInfo = { label: 'Bài tập tuhocjlpt - N4' }
 
 const ExercisePage = () => {
   const navigate = useNavigate()
@@ -80,11 +82,7 @@ const ExercisePage = () => {
   }
   return (
     <div className="w-full">
-      <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
-        <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
-          Gokaku Dekiru - N4
-        </Typography>
-      </div>
+      <PageTitle label={exerciseInfo.label} />
       <div className="container mx-auto flex flex-col lg:flex-row items-start justify-center py-20">
         <div className="flex items-center justify-center lg:justify-end w-full max-xl:py-24 max-lg:py-5">
           <img src={bookCircles} alt="" className="w-[80%] h-[80%]" />
