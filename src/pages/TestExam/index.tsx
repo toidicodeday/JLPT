@@ -7,25 +7,25 @@ const testList = [
     id: '1',
     name: 'Đề thi thử JLPT N4 tháng 2/2023',
     status: 'FREE',
-    check: 'hot',
+    cardType: 'hot',
   },
   {
     id: '2',
     name: 'Đề thi thử JLPT N4 tháng 1/2023',
     status: 'FREE',
-    check: 'normal',
+    cardType: 'normal',
   },
   {
     id: '3',
     name: 'Đề thi thử JLPT N4 tháng 1/2023',
     status: 'FREE',
-    check: 'normal',
+    cardType: 'normal',
   },
   {
     id: '4',
     name: 'Đề thi thử JLPT N4 tháng 1/2023',
     status: 'FREE',
-    check: 'normal',
+    cardType: 'normal',
   },
 ]
 
@@ -42,25 +42,25 @@ const TestExam = () => {
       <div className="grid grid-cols-2 max-md:grid-cols-1 gap-x-10">
         <div className="w-full h-full">
           {testList
-            ?.filter(item => item.check === 'hot')
+            ?.filter(item => item.cardType === 'hot')
             ?.map(item => (
               <TrialTestCard
                 key={item.id}
                 status={item.status}
                 name={item.name}
-                check={item.check}
+                cardType={item.cardType}
               />
             ))}
         </div>
         <div className="flex flex-col gap-7">
           {testList
-            ?.filter(item => item.check === 'normal')
+            ?.filter(item => item.cardType === 'normal')
             ?.map(item => (
               <TrialTestCard
                 key={item.id}
                 status={item.status}
                 name={item.name}
-                check={item.check}
+                cardType={item.cardType}
               />
             ))}
         </div>

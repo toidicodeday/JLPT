@@ -131,8 +131,13 @@ const LevelOverView = () => {
           </p>
           <Row className="" gutter={[{ xs: 20, sm: 30, md: 67, lg: 67 }, 30]}>
             {categoryList?.map(item => (
-              <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-                <Category category={item} />
+              <Col key={item.id} xs={24} sm={24} md={12} lg={8} xl={8}>
+                <Category
+                  name={item.name}
+                  imgSrc={item.imgSrc}
+                  viewMorePath={item.path}
+                  listItem={item.listItem}
+                />
               </Col>
             ))}
           </Row>

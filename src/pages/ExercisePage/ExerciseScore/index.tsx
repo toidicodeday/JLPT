@@ -7,7 +7,7 @@ import PageTitle from '@/components/PageTitle'
 const description =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
-const scoreInfo = { title: '[1 ~ 10] Cách đọc Kanji N4' }
+const exerciseInfo = { title: '[1 ~ 10] Cách đọc Kanji N4' }
 
 const questions = [
   {
@@ -159,7 +159,7 @@ const ExerciseScore = () => {
 
   return (
     <div className="w-full">
-      <PageTitle label={scoreInfo.title} />
+      <PageTitle label={exerciseInfo.title} />
       <div className="py-7 xl:px-32 sm:px-20 max-sm:px-5 ">
         <div className="flex items-center max-[500px]:flex-col p-7 mb-7 lg:gap-10 max-lg:gap-5">
           <span className="bg-secondPrimary py-2 px-5 rounded-xl font-bold lg:text-3xl max-lg:text-xl text-primary">

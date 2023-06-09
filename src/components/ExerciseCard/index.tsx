@@ -29,7 +29,7 @@ const ExerciseCard = ({ name, type, status }: Props) => {
             </span>
           )}
           {status === 'doing' && (
-            <img src={LoadIcon} alt="" className={`w-4 h-4`} />
+            <img src={LoadIcon} alt="" className="w-4 h-4" />
           )}
         </div>
         <Typography className="font-normal text-xs text-black">

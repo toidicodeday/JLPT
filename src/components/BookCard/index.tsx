@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 type Props = {
+  bookId?: string
   name: string
   imgSrc: string
 }

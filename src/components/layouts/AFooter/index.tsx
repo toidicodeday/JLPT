@@ -136,20 +136,20 @@ const AFooter = () => {
           </Col>
           <Col lg={12} md={12} sm={24} xl={12}>
             <Row className="max-sm:text-xs" gutter={[20, 0]}>
-              {categoryList.map(item => (
-                <Col key={item.id} span={6}>
+              {categoryList?.map(categotyItem => (
+                <Col key={categotyItem.id} span={6}>
                   <div className="flex flex-col justify-between h-full">
                     <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
-                      {item.name}
+                      {categotyItem.name}
                     </Typography>
                     <div className="flex flex-col mt-5 gap-2">
-                      {item.levelList.map(item => (
+                      {categotyItem.levelList?.map(levelItem => (
                         <Link
-                          key={item.id}
+                          key={levelItem.id}
                           className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
                           to={''}
                         >
-                          {item.name}
+                          {levelItem.name}
                         </Link>
                       ))}
                     </div>

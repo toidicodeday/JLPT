@@ -44,7 +44,7 @@ const TestDetails = () => {
               <TestTypeCard
                 imgSrc={item.imgSrc}
                 name={item.name}
-                des={item.des}
+                description={item.des}
                 onClick={handleGoToExam}
               />
             </Col>
