@@ -185,7 +185,7 @@ const LevelOverView = () => {
             <img
               src={comingSoonImg}
               alt="coming-soon-img"
-              className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[70%] h-[70%] bg-cover"
+              className="absolute top-0 h-full left-2/4 -translate-x-2/4"
             />
           </div>
         </div>
