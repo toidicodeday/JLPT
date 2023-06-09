@@ -1,9 +1,10 @@
-import { Typography, message } from 'antd'
+import { message } from 'antd'
 import Button from '@/components/Button'
 import React from 'react'
-import { FaCrown } from 'react-icons/fa'
-import LoadIcon from '../../../../assets/img/images/load-icon.png'
-import { Link } from 'react-router-dom'
+import PageTitle from '@/components/PageTitle'
+import ExerciseCard from '@/components/ExerciseCard'
+
+const exerciseInfo = { title: 'Cách đọc Kanji N4' }
 
 const ExerciseDetail = () => {
   const listExercises = [
@@ -218,44 +219,22 @@ const ExerciseDetail = () => {
       status: 'not started',
     },
   ]
+
   const showWarning = () => {
     message.warning('Tính năng chưa khả dụng')
   }
   return (
     <div className="w-full">
-      <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
-        <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
-          Cách đọc Kanji N4
-        </Typography>
-      </div>
+      <PageTitle label={exerciseInfo.title} />
       <div className="pt-12 pb-28 lg:px-32 max-lg:px-10 max-sm:px-5 relative">
         <div className="grid xl:grid-cols-5 gap-4 lg:grid-cols-3 grid-cols-2">
-          {listExercises.map(item => (
-            <div key={item.id}>
-              <Link
-                to={'/exercise/lesson-details'}
-                className="border border-solid border-borderColor py-4 px-5  rounded-3xl cursor-pointer flex flex-col justify-between h-full"
-              >
-                <div className="flex justify-between mb-5">
-                  {item.type === 'free' && (
-                    <span className="border border-solid border-aquaGreen text-aquaGreen rounded py-1 px-1 text-xs font-normal">
-                      FREE
-                    </span>
-                  )}
-                  {item.type === 'premium' && (
-                    <span>
-                      <FaCrown className="border border-solid border-selectiveYellow text-selectiveYellow rounded py-1 px-1 text-xl w-7 h-5" />
-                    </span>
-                  )}
-                  {item.status === 'doing' && (
-                    <img src={LoadIcon} alt="" className={`w-4 h-4`} />
-                  )}
-                </div>
-                <Typography className="font-normal text-xs text-black">
-                  {item.name}
-                </Typography>
-              </Link>
-            </div>
+          {listExercises?.map(item => (
+            <ExerciseCard
+              key={item.id}
+              type={item.type}
+              name={item.name}
+              status={item.status}
+            />
           ))}
         </div>
         <Button

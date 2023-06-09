@@ -7,6 +7,97 @@ import { Col, Row } from 'antd'
 import './style.scss'
 import { Link } from 'react-router-dom'
 
+const categoryList = [
+  {
+    id: '1',
+    name: 'Luyện cùng bài tập tuhocjlpt.com',
+    levelList: [
+      {
+        id: '1',
+        name: 'N1',
+      },
+      {
+        id: '2',
+        name: 'N2',
+      },
+      {
+        id: '3',
+        name: 'N3',
+      },
+      {
+        id: '4',
+        name: 'N4',
+      },
+    ],
+  },
+  {
+    id: '2',
+    name: 'Luyện theo sách',
+    levelList: [
+      {
+        id: '1',
+        name: 'N1',
+      },
+      {
+        id: '2',
+        name: 'N2',
+      },
+      {
+        id: '3',
+        name: 'N3',
+      },
+      {
+        id: '4',
+        name: 'N4',
+      },
+    ],
+  },
+  {
+    id: '3',
+    name: 'Luyện đề',
+    levelList: [
+      {
+        id: '1',
+        name: 'N1',
+      },
+      {
+        id: '2',
+        name: 'N2',
+      },
+      {
+        id: '3',
+        name: 'N3',
+      },
+      {
+        id: '4',
+        name: 'N4',
+      },
+    ],
+  },
+  {
+    id: '4',
+    name: 'Phòng thi thử',
+    levelList: [
+      {
+        id: '1',
+        name: 'N1',
+      },
+      {
+        id: '2',
+        name: 'N2',
+      },
+      {
+        id: '3',
+        name: 'N3',
+      },
+      {
+        id: '4',
+        name: 'N4',
+      },
+    ],
+  },
+]
+
 const AFooter = () => {
   return (
     <div className="w-full">
@@ -45,138 +136,26 @@ const AFooter = () => {
           </Col>
           <Col lg={12} md={12} sm={24} xl={12}>
             <Row className="max-sm:text-xs" gutter={[20, 0]}>
-              <Col span={6}>
-                <div className="flex flex-col justify-between h-full">
-                  <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
-                    Luyện cùng bài tập tuhocjlpt.com
-                  </Typography>
-                  <div className="flex flex-col mt-5 gap-2">
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N1
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N2
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N3
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N4
-                    </Link>
+              {categoryList?.map(categotyItem => (
+                <Col key={categotyItem.id} span={6}>
+                  <div className="flex flex-col justify-between h-full">
+                    <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
+                      {categotyItem.name}
+                    </Typography>
+                    <div className="flex flex-col mt-5 gap-2">
+                      {categotyItem.levelList?.map(levelItem => (
+                        <Link
+                          key={levelItem.id}
+                          className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
+                          to={''}
+                        >
+                          {levelItem.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Col>
-              <Col span={6}>
-                <div className="flex flex-col justify-between h-full">
-                  <Typography className="font-bold text-sm text-[#707070]  min-h-[40px]">
-                    Luyện theo sách
-                  </Typography>
-                  <div className="flex flex-col mt-5 gap-2">
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N1
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N2
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N3
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N4
-                    </Link>
-                  </div>
-                </div>
-              </Col>
-              <Col span={6}>
-                <div className="flex flex-col justify-between h-full">
-                  <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
-                    Luyện đề
-                  </Typography>
-                  <div className="flex flex-col mt-5 gap-2">
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N1
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N2
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N3
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N4
-                    </Link>
-                  </div>
-                </div>
-              </Col>
-              <Col span={6}>
-                <div className="flex flex-col justify-between h-full">
-                  <Typography className="font-bold text-sm text-[#707070] min-h-[40px]">
-                    Phòng thi thử
-                  </Typography>
-                  <div className="flex flex-col mt-5 gap-2">
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N1
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N2
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N3
-                    </Link>
-                    <Link
-                      className="cursor-pointer hover:text-[#FB3357] text-[#707070]"
-                      to={''}
-                    >
-                      N4
-                    </Link>
-                  </div>
-                </div>
-              </Col>
+                </Col>
+              ))}
             </Row>
           </Col>
         </Row>
