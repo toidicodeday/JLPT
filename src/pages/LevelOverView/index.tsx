@@ -1,16 +1,19 @@
 import { Col, Row } from 'antd'
-import React from 'react'
-import hotNew from '../../assets/img/images/hotNews.png'
+import React, { useState } from 'react'
 import exerciseImg from '../../assets/img/images/over-view-exercise.png'
 import bookImg from '../../assets/img/images/over-view-book.png'
 import examImg from '../../assets/img/images/over-view-exam.png'
 import comingSoonImg from '../../assets/img/images/coming-soon.png'
 import comingSoonBgImg from '../../assets/img/images/coming-soon-bg.png'
-import { Link } from 'react-router-dom'
 import HeaderNotLogin from '@/components/layouts/AHeader/HeaderNotLogin'
 import AFooter from '@/components/layouts/AFooter'
 import PageTitle from '@/components/PageTitle'
 import Category from '@/components/Category'
+import banner from '../../assets/img/images/banner.png'
+import hotNewImg from '../../assets/img/images/hotnew.png'
+import { AiOutlineClose } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
+import Button from '../../components/Button'
 
 const levelInfo = { title: 'N4' }
 
@@ -117,14 +120,41 @@ const categoryList = [
 ]
 
 const LevelOverView = () => {
+  const navigate = useNavigate()
+  const [showBanner, setShowBanner] = useState(true)
+  const handleCloseBanner = () => {
+    setShowBanner(false)
+    console.log(showBanner)
+  }
   return (
     <div className="w-full">
       <HeaderNotLogin />
       <PageTitle label={levelInfo.title} />
       <div className="py-10 lg:px-32 sm:px-20 max-sm:px-5">
-        <Link to={'/trial-exam'}>
-          <img src={hotNew} alt="hot-new-img" className="w-full" />
-        </Link>
+        {showBanner && (
+          <div className="banner-shadow rounded-2xl overflow-hidden relative h-60 max-sm:h-40 max-[500px]:h-28$">
+            <img src={banner} alt="banner-img" className="w-full h-full" />
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center gap-10 max-sm:gap-5 max-[500px]:gap-2 pl-10 max-sm:pl-5 max-[500px]:pl-2 max-sm:pr-5 pr-14">
+              <img src={hotNewImg} alt="" className="h-32 max-[500px]:h-14" />
+              <div className="flex max-lg:flex-col max-lg:gap-5 max-sm:gap-2 justify-between items-center flex-1">
+                <div className="text-white font-semibold xl:text-5xl max-xl:text-3xl max-sm:text-lg max-[500px]:text-sm">
+                  <p>Đề thi thử JLPT mới nhất</p>
+                  <p>tháng 12/2023</p>
+                </div>
+                <Button
+                  type="outline"
+                  label="VÀO THI NGAY"
+                  onClick={() => navigate('/trial-exam')}
+                  className="rounded-3xl xl:text-2xl md:xl font-semibold border-[3px] border-solid border-primary h-14 max-sm:h-10"
+                ></Button>
+              </div>
+            </div>
+            <AiOutlineClose
+              className="absolute top-[10%] right-[1%] text-2xl text-white cursor-pointer"
+              onClick={handleCloseBanner}
+            />
+          </div>
+        )}
         <div className="mt-14">
           <p className="font-semibold lg:text-2xl md:text-2xl sm:text-xl max-[640px]:text-xl text-black mb-7">
             CÙNG LUYỆN TẬP

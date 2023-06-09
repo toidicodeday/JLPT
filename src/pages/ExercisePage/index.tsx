@@ -1,11 +1,11 @@
 import React from 'react'
-import { Col, Row, Tag } from 'antd'
+import { Tag } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
-import bookIcon from '../../assets/img/images/book-icon.png'
+import bookCircles from '../../assets/img/images/book-circles.png'
 import PageTitle from '@/components/PageTitle'
 
-const exerciseInfo = { title: 'Bài tập tuhocjlpt - N4' }
+const exerciseInfo = { label: 'Bài tập tuhocjlpt - N4' }
 
 const ExercisePage = () => {
   const navigate = useNavigate()
@@ -82,26 +82,13 @@ const ExercisePage = () => {
   }
   return (
     <div className="w-full">
-      <PageTitle label={exerciseInfo.title} />
-      <Row
-        gutter={[{ xl: 50, lg: 30 }, 30]}
-        className="lg:py-32 max-lg:py-20 max-sm:py-10 lg:px-20 max-lg:px-20 max-md:px-10 max-sm:px-5"
-      >
-        <Col xs={24} lg={12}>
-          <div className="flex items-center justify-center w-full h-full max-xl:py-24 max-lg:py-0">
-            <div className="w-[85%] h-[85%] rounded-[50%] border-dashed border-[#FF261F96] flex items-center justify-center">
-              <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#8EF9F3] flex items-center justify-center">
-                <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#593C8F8C] flex items-center justify-center">
-                  <div className="w-[90%] h-[90%] rounded-[50%] border-dashed border-[#1717386E] flex items-center justify-center">
-                    <img src={bookIcon} alt="" className="w-[90%] h-[90%]" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Col>
-        <Col xs={24} lg={12}>
-          {exerciseList.slice(0, 7)?.map((item, index) => (
+      <PageTitle label={exerciseInfo.label} />
+      <div className="container mx-auto flex flex-col lg:flex-row items-start justify-center py-20">
+        <div className="flex items-center justify-center lg:justify-end w-full max-xl:py-24 max-lg:py-5">
+          <img src={bookCircles} alt="" className="w-[80%] h-[80%]" />
+        </div>
+        <div className="w-full lg:px-0 px-3">
+          {exerciseList.slice(0, 7).map((item, index) => (
             <div
               key={item.id}
               className={twMerge(
@@ -121,8 +108,8 @@ const ExercisePage = () => {
               </Tag>
             </div>
           ))}
-        </Col>
-      </Row>
+        </div>
+      </div>
     </div>
   )
 }
