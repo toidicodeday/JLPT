@@ -11,11 +11,9 @@ const Unauthorize = lazy(() =>
   lazyRetry(() => import('../pages/Error/Unauthorize')),
 )
 const HomePage = lazy(() => lazyRetry(() => import('@/pages/HomePage')))
-const TestExam = lazy(() =>
-  lazyRetry(() => import('@/pages/HomePage/components/TestExam')),
-)
+const TestExam = lazy(() => lazyRetry(() => import('@/pages/TestExam')))
 const LevelOverView = lazy(() =>
-  lazyRetry(() => import('@/pages/HomePage/components/LevelOverView')),
+  lazyRetry(() => import('@/pages/LevelOverView')),
 )
 
 const routes: IRoute[] = [

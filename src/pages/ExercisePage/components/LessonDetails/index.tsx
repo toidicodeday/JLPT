@@ -1,9 +1,9 @@
-import { Typography } from 'antd'
 import Button from '@/components/Button'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import RadioGroup from '@/components/RadioGroup'
 import { twMerge } from 'tailwind-merge'
+import PageTitle from '@/components/PageTitle'
 
 const lessonInfo = { title: ' [1 ~ 10] Cách đọc Kanji N4' }
 
@@ -138,11 +138,7 @@ const LessonDetail = () => {
 
   return (
     <div className="w-full">
-      <div className="bg-secondPrimary lg:py-5 sm:py-2 max-sm:py-2 text-center">
-        <Typography className="font-semibold text-primary lg:text-5xl md:text-3xl sm:text-2xl max-sm:text-xl">
-          {lessonInfo.title}
-        </Typography>
-      </div>
+      <PageTitle label={lessonInfo.title} />
       <div className="py-7 xl:px-32 sm:px-20 max-sm:px-5">
         <div className="shadow rounded-3xl p-7 h-96 max-[350px]:h-80 text-black font-normal">
           <div className="mb-8">
@@ -177,7 +173,7 @@ const LessonDetail = () => {
           />
         </div>
         <div className="bg-[#F5F5F5] pt-7 pb-10 px-5 flex justify-center sm:gap-5 max-sm:gap-5 max-[415px]:grid max-[415px]:grid-cols-5 max-[415px]:gap-2">
-          {questions.map((item, quesIndex) => {
+          {questions?.map((item, quesIndex) => {
             const isAnswered = userAnswers[quesIndex] !== undefined
             const isActive = currentQuestionIndex === quesIndex
 
