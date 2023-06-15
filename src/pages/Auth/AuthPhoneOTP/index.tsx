@@ -77,7 +77,7 @@ const AuthPhoneOTP = () => {
           renderInput={props => (
             <input
               {...props}
-              className="w-10 h-12 ml-3 rounded font-bold text-xl border-smokeyGrey border-solid"
+              className="w-10 h-12 ml-3 max-sm:w-8 max-sm:h-10 max-sm:ml-1 rounded font-bold text-xl border-smokeyGrey border-solid"
             />
           )}
           shouldAutoFocus

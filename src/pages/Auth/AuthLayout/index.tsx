@@ -21,7 +21,7 @@ const AuthLayout = ({ children }: Props) => {
           </div>
         </div>
       </div>
-      <div className="mobile-container w-screen h-screen px-10 flex items-center justify-center xl:hidden">
+      <div className="mobile-container overflow-hidden w-screen h-screen px-10 flex items-center justify-center xl:hidden">
         {children}
       </div>
     </div>

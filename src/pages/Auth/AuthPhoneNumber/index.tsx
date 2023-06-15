@@ -24,7 +24,7 @@ const AuthPhoneNumber = () => {
           renderInput={props => (
             <input
               {...props}
-              className="w-10 h-12 ml-3 rounded font-bold text-xl border-solid border-smokeyGrey"
+              className="w-10 h-12 max-sm:w-8 max-sm:h-10 max-sm:ml-1 ml-3 rounded font-bold text-xl border-solid border-smokeyGrey"
             />
           )}
           shouldAutoFocus
